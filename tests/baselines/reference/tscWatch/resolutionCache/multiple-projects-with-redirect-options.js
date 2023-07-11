@@ -727,6 +727,8 @@ File '/home/src/project/pkg0.ts' does not exist.
 File '/home/src/project/pkg0.tsx' does not exist.
 File '/home/src/project/pkg0.d.ts' exists - use it as a name resolution result.
 ======== Module name 'pkg0' was successfully resolved to '/home/src/project/pkg0.d.ts'. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
 FileWatcher:: Added:: WatchInfo: /home/src/project/bFileWithImports.d.ts 250 undefined Source file
 ======== Resolving module './aFileWithImports' from '/home/src/project/bFileWithImports.ts'. ========
 Using compiler options of project reference redirect '/home/src/project/tsconfig.b.json'.
@@ -760,8 +762,6 @@ FileWatcher:: Added:: WatchInfo: /home/src/project/pkg0.d.ts 250 undefined Sourc
 FileWatcher:: Added:: WatchInfo: /home/src/project/cRandomFileForImport.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /home/src/project/cRandomFileForImport2.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 a/lib/lib.d.ts

@@ -153,6 +153,11 @@ Resolved under condition 'import'.
 Exiting conditional exports.
 Resolving real path for '/home/src/project/node_modules/pkg0/import.d.ts', result '/home/src/project/node_modules/pkg0/import.d.ts'.
 ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/import.d.ts' with Package ID 'pkg0/import.d.ts@0.0.1'. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
+FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/package.json 2000 undefined File location affecting resolution
 ======== Resolving module 'pkg1' from '/home/src/project/fileWithImports.ts'. ========
 Module resolution kind is not specified, using 'Node10'.
 File '/home/src/project/package.json' does not exist according to earlier cached lookups.
@@ -214,6 +219,7 @@ File '/home/src/project/node_modules/pkg1/import.d.ts' exists - use it as a name
 Resolved under condition 'import'.
 Exiting conditional exports.
 ======== Module name 'pkg1' was not resolved. ========
+FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg1/package.json 2000 undefined File location affecting resolution
 FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/import.d.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /home/src/project/fileWithTypeRefs.ts 250 undefined Source file
 ======== Resolving type reference directive 'pkg2', containing file '/home/src/project/fileWithTypeRefs.ts', root directory '/home/src/project/node_modules/@types,/home/src/node_modules/@types,/home/node_modules/@types,/node_modules/@types'. ========
@@ -234,8 +240,6 @@ Resolved under condition 'import'.
 Exiting conditional exports.
 Resolving real path for '/home/src/project/node_modules/pkg2/import.d.ts', result '/home/src/project/node_modules/pkg2/import.d.ts'.
 ======== Type reference directive 'pkg2' was successfully resolved to '/home/src/project/node_modules/pkg2/import.d.ts' with Package ID 'pkg2/import.d.ts@0.0.1', primary: false. ========
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
 FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg2/package.json 2000 undefined File location affecting resolution
 ======== Resolving type reference directive 'pkg3', containing file '/home/src/project/fileWithTypeRefs.ts', root directory '/home/src/project/node_modules/@types,/home/src/node_modules/@types,/home/node_modules/@types,/node_modules/@types'. ========
 Resolving with primary search path '/home/src/project/node_modules/@types, /home/src/node_modules/@types, /home/node_modules/@types, /node_modules/@types'.
@@ -271,10 +275,6 @@ Resolving real path for '/home/src/project/node_modules/@types/pkg4/index.d.ts',
 ======== Type reference directive 'pkg4' was successfully resolved to '/home/src/project/node_modules/@types/pkg4/index.d.ts', primary: true. ========
 FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types/pkg4/index.d.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations
-FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/package.json 2000 undefined File location affecting resolution
-FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg1/package.json 2000 undefined File location affecting resolution
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 DirectoryWatcher:: Triggered with /home/src/project/fileWithImports.js :: WatchInfo: /home/src/project 0 undefined Failed Lookup Locations

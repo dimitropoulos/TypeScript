@@ -185,6 +185,11 @@ Info seq  [hh:mm:ss:mss] Resolved under condition 'import'.
 Info seq  [hh:mm:ss:mss] Exiting conditional exports.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/pkg0/import.d.ts', result '/home/src/project/node_modules/pkg0/import.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/import.d.ts' with Package ID 'pkg0/import.d.ts@0.0.1'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/package.json 2000 undefined Project: /home/src/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] ======== Resolving module 'pkg1' from '/home/src/project/fileWithImports.ts'. ========
 Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'.
 Info seq  [hh:mm:ss:mss] File '/home/src/project/package.json' does not exist according to earlier cached lookups.
@@ -246,6 +251,7 @@ Info seq  [hh:mm:ss:mss] 'package.json' does not have a 'peerDependencies' field
 Info seq  [hh:mm:ss:mss] Resolved under condition 'import'.
 Info seq  [hh:mm:ss:mss] Exiting conditional exports.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg1' was not resolved. ========
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg1/package.json 2000 undefined Project: /home/src/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] ======== Resolving type reference directive 'pkg2', containing file '/home/src/project/fileWithTypeRefs.ts', root directory '/home/src/project/node_modules/@types,/home/src/node_modules/@types,/home/node_modules/@types,/node_modules/@types'. ========
@@ -266,8 +272,6 @@ Info seq  [hh:mm:ss:mss] Resolved under condition 'import'.
 Info seq  [hh:mm:ss:mss] Exiting conditional exports.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/pkg2/import.d.ts', result '/home/src/project/node_modules/pkg2/import.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Type reference directive 'pkg2' was successfully resolved to '/home/src/project/node_modules/pkg2/import.d.ts' with Package ID 'pkg2/import.d.ts@0.0.1', primary: false. ========
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg2/package.json 2000 undefined Project: /home/src/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] ======== Resolving type reference directive 'pkg3', containing file '/home/src/project/fileWithTypeRefs.ts', root directory '/home/src/project/node_modules/@types,/home/src/node_modules/@types,/home/node_modules/@types,/node_modules/@types'. ========
 Info seq  [hh:mm:ss:mss] Resolving with primary search path '/home/src/project/node_modules/@types, /home/src/node_modules/@types, /home/node_modules/@types, /node_modules/@types'.
@@ -298,10 +302,6 @@ Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/@types/pkg4/index.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/@types/pkg4/index.d.ts', result '/home/src/project/node_modules/@types/pkg4/index.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Type reference directive 'pkg4' was successfully resolved to '/home/src/project/node_modules/@types/pkg4/index.d.ts', primary: true. ========
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined WatchType: Closed Script info
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/package.json 2000 undefined Project: /home/src/project/tsconfig.json WatchType: File location affecting resolution
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg1/package.json 2000 undefined Project: /home/src/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/project/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -851,11 +851,11 @@ ScriptInfos::
         /home/src/project/tsconfig.json
 
 write file not resolved by import
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Before running Timeout callback:: count: 1
 5: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 //// [/home/src/project/node_modules/pkg1/require.d.ts]
@@ -1033,11 +1033,11 @@ ScriptInfos::
         /home/src/project/tsconfig.json
 
 write file not resolved by typeRef
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg3/require.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Before running Timeout callback:: count: 1
 8: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 //// [/home/src/project/node_modules/pkg3/require.d.ts]
@@ -1453,11 +1453,11 @@ ScriptInfos::
         /home/src/project/tsconfig.json
 
 write file not resolved by import
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg1/require1.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Before running Timeout callback:: count: 1
 14: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 //// [/home/src/project/node_modules/pkg1/require1.d.ts]
@@ -2124,23 +2124,23 @@ ScriptInfos::
         /home/src/project/tsconfig.json
 
 delete resolved import file
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Scheduled: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg0/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Before running Timeout callback:: count: 3
-27: /home/src/project/tsconfig.json
-28: *ensureProjectForOpenFiles*
-29: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+27: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+28: /home/src/project/tsconfig.json
+29: *ensureProjectForOpenFiles*
 //// [/home/src/project/node_modules/pkg0/import.d.ts] deleted
 
 Timeout callback:: count: 3
-27: /home/src/project/tsconfig.json *new*
-28: *ensureProjectForOpenFiles* *new*
-29: /home/src/project/tsconfig.jsonFailedLookupInvalidation *new*
+27: /home/src/project/tsconfig.jsonFailedLookupInvalidation *new*
+28: /home/src/project/tsconfig.json *new*
+29: *ensureProjectForOpenFiles* *new*
 
 Projects::
 /home/src/project/tsconfig.json (Configured) *changed*
@@ -2199,6 +2199,7 @@ ScriptInfos::
     containingProjects: 1
         /home/src/project/tsconfig.json
 
+Info seq  [hh:mm:ss:mss] Running: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Running: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] ======== Resolving module 'pkg0' from '/home/src/project/randomFileForImport.ts'. ========
@@ -2324,9 +2325,6 @@ Info seq  [hh:mm:ss:mss] event:
     }
 After running Timeout callback:: count: 0
 
-Timeout callback:: count: 0
-29: /home/src/project/tsconfig.jsonFailedLookupInvalidation *deleted*
-
 Projects::
 /home/src/project/tsconfig.json (Configured) *changed*
     projectStateVersion: 10
@@ -2334,23 +2332,23 @@ Projects::
     dirty: false *changed*
 
 delete resolved typeRef file
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Scheduled: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Scheduled: /home/src/project/tsconfig.jsonFailedLookupInvalidation
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /home/src/project/node_modules/pkg2/import.d.ts :: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Before running Timeout callback:: count: 3
-30: /home/src/project/tsconfig.json
-31: *ensureProjectForOpenFiles*
-32: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+30: /home/src/project/tsconfig.jsonFailedLookupInvalidation
+31: /home/src/project/tsconfig.json
+32: *ensureProjectForOpenFiles*
 //// [/home/src/project/node_modules/pkg2/import.d.ts] deleted
 
 Timeout callback:: count: 3
-30: /home/src/project/tsconfig.json *new*
-31: *ensureProjectForOpenFiles* *new*
-32: /home/src/project/tsconfig.jsonFailedLookupInvalidation *new*
+30: /home/src/project/tsconfig.jsonFailedLookupInvalidation *new*
+31: /home/src/project/tsconfig.json *new*
+32: *ensureProjectForOpenFiles* *new*
 
 Projects::
 /home/src/project/tsconfig.json (Configured) *changed*
@@ -2410,6 +2408,7 @@ ScriptInfos::
     containingProjects: 1
         /home/src/project/tsconfig.json
 
+Info seq  [hh:mm:ss:mss] Running: /home/src/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Running: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'pkg0' from '/home/src/project/randomFileForImport.ts' of old program, it was not resolved.
@@ -2487,9 +2486,6 @@ Info seq  [hh:mm:ss:mss] event:
       }
     }
 After running Timeout callback:: count: 0
-
-Timeout callback:: count: 0
-32: /home/src/project/tsconfig.jsonFailedLookupInvalidation *deleted*
 
 Projects::
 /home/src/project/tsconfig.json (Configured) *changed*

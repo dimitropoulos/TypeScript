@@ -83,6 +83,8 @@ File '/home/src/project/witha/node_modules/mymodule/index.tsx' does not exist.
 File '/home/src/project/witha/node_modules/mymodule/index.d.ts' exists - use it as a name resolution result.
 Resolving real path for '/home/src/project/witha/node_modules/mymodule/index.d.ts', result '/home/src/project/witha/node_modules/mymodule/index.d.ts'.
 ======== Module name 'mymodule' was successfully resolved to '/home/src/project/witha/node_modules/mymodule/index.d.ts'. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
 ======== Resolving module 'mymoduleutils' from '/home/src/project/witha/a.ts'. ========
 Module resolution kind is not specified, using 'Node10'.
 Loading module 'mymoduleutils' from 'node_modules' folder, target file types: TypeScript, Declaration.
@@ -104,6 +106,8 @@ Directory '/home/src/node_modules' does not exist, skipping all lookups in it.
 Directory '/home/node_modules' does not exist, skipping all lookups in it.
 Directory '/node_modules' does not exist, skipping all lookups in it.
 ======== Module name 'mymoduleutils' was not resolved. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
 FileWatcher:: Added:: WatchInfo: /home/src/project/witha/node_modules/mymodule/index.d.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /home/src/project/withb/b.ts 250 undefined Source file
 ======== Resolving module 'mymodule' from '/home/src/project/withb/b.ts'. ========
@@ -119,6 +123,8 @@ File '/home/src/project/withb/node_modules/mymodule/index.tsx' does not exist.
 File '/home/src/project/withb/node_modules/mymodule/index.d.ts' exists - use it as a name resolution result.
 Resolving real path for '/home/src/project/withb/node_modules/mymodule/index.d.ts', result '/home/src/project/withb/node_modules/mymodule/index.d.ts'.
 ======== Module name 'mymodule' was successfully resolved to '/home/src/project/withb/node_modules/mymodule/index.d.ts'. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed Lookup Locations
 ======== Resolving module 'mymoduleutils' from '/home/src/project/withb/b.ts'. ========
 Module resolution kind is not specified, using 'Node10'.
 Loading module 'mymoduleutils' from 'node_modules' folder, target file types: TypeScript, Declaration.
@@ -131,12 +137,6 @@ Resolution for module 'mymoduleutils' was found in cache from location '/home/sr
 ======== Module name 'mymoduleutils' was not resolved. ========
 FileWatcher:: Added:: WatchInfo: /home/src/project/withb/node_modules/mymodule/index.d.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 ../../../a/lib/lib.d.ts
