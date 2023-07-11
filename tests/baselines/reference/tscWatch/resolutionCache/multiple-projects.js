@@ -738,6 +738,8 @@ File '/home/src/project/node_modules/pkg0/index.tsx' does not exist.
 File '/home/src/project/node_modules/pkg0/index.d.ts' exists - use it as a name resolution result.
 Resolving real path for '/home/src/project/node_modules/pkg0/index.d.ts', result '/home/src/project/node_modules/pkg0/index.d.ts'.
 ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/index.d.ts'. ========
+DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
+Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
 FileWatcher:: Added:: WatchInfo: /home/src/project/aFileWithImports.d.ts 250 undefined Source file
 ======== Resolving module './aRandomFileForImport' from '/home/src/project/aFileWithImports.ts'. ========
 Using compiler options of project reference redirect '/home/src/project/tsconfig.a.json'.
@@ -757,8 +759,6 @@ FileWatcher:: Added:: WatchInfo: /home/src/project/bRandomFileForImport.ts 250 u
 FileWatcher:: Added:: WatchInfo: /home/src/project/node_modules/pkg0/index.d.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /home/src/project/bRandomFileForImport2.ts 250 undefined Source file
 FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
-DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
-Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 a/lib/lib.d.ts

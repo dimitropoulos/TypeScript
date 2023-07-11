@@ -725,6 +725,8 @@ Info seq  [hh:mm:ss:mss] File '/home/src/project/pkg0.ts' does not exist.
 Info seq  [hh:mm:ss:mss] File '/home/src/project/pkg0.tsx' does not exist.
 Info seq  [hh:mm:ss:mss] File '/home/src/project/pkg0.d.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg0' was successfully resolved to '/home/src/project/pkg0.d.ts'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/bFileWithImports.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] ======== Resolving module './aFileWithImports' from '/home/src/project/bFileWithImports.ts'. ========
 Info seq  [hh:mm:ss:mss] Using compiler options of project reference redirect '/home/src/project/tsconfig.b.json'.
@@ -752,6 +754,8 @@ Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.tsx' do
 Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.d.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/pkg0/index.d.ts', result '/home/src/project/node_modules/pkg0/index.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/index.d.ts'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/aFileWithImports.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] ======== Resolving module 'pkg0' from '/home/src/project/aFileWithImports.ts'. ========
 Info seq  [hh:mm:ss:mss] Using compiler options of project reference redirect '/home/src/project/tsconfig.a.json'.
@@ -776,10 +780,6 @@ Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/aRan
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/bRandomFileForImport.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/project/pkg0.d.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined WatchType: Closed Script info
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project 0 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/project/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -1248,6 +1248,8 @@ Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.tsx' do
 Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.d.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/pkg0/index.d.ts', result '/home/src/project/node_modules/pkg0/index.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/index.d.ts'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] ======== Resolving module 'pkg0' from '/home/src/project/aFileWithImports.ts'. ========
 Info seq  [hh:mm:ss:mss] Using compiler options of project reference redirect '/home/src/project/tsconfig.a.json'.
 Info seq  [hh:mm:ss:mss] Resolution for module 'pkg0' was found in cache from location '/home/src/project'.
@@ -1264,8 +1266,6 @@ Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'
 Info seq  [hh:mm:ss:mss] Loading module as file / folder, candidate module location '/home/src/project/aRandomFileForImport2', target file types: TypeScript, Declaration.
 Info seq  [hh:mm:ss:mss] File '/home/src/project/aRandomFileForImport2.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] ======== Module name './aRandomFileForImport2' was successfully resolved to '/home/src/project/aRandomFileForImport2.ts'. ========
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.b.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/project/tsconfig.b.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -1838,6 +1838,8 @@ Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.tsx' do
 Info seq  [hh:mm:ss:mss] File '/home/src/project/node_modules/pkg0/index.d.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/project/node_modules/pkg0/index.d.ts', result '/home/src/project/node_modules/pkg0/index.d.ts'.
 Info seq  [hh:mm:ss:mss] ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/index.d.ts'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] ======== Resolving module './aRandomFileForImport' from '/home/src/project/aFileWithImports.ts'. ========
 Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'.
 Info seq  [hh:mm:ss:mss] Loading module as file / folder, candidate module location '/home/src/project/aRandomFileForImport', target file types: TypeScript, Declaration.
@@ -1848,8 +1850,6 @@ Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'
 Info seq  [hh:mm:ss:mss] Loading module as file / folder, candidate module location '/home/src/project/aRandomFileForImport2', target file types: TypeScript, Declaration.
 Info seq  [hh:mm:ss:mss] File '/home/src/project/aRandomFileForImport2.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] ======== Module name './aRandomFileForImport2' was successfully resolved to '/home/src/project/aRandomFileForImport2.ts'. ========
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Project: /home/src/project/tsconfig.a.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/project/tsconfig.a.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
