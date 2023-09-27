@@ -187,6 +187,7 @@ export interface RunWatchBaseline<T extends ts.BuilderProgram> extends BaselineB
     getPrograms: () => readonly CommandLineProgram[];
     watchOrSolution: WatchOrSolution<T>;
     useSourceOfProjectReferenceRedirect?: () => boolean;
+    userResolvedModuleNames?: true;
 }
 export function runWatchBaseline<T extends ts.BuilderProgram = ts.EmitAndSemanticDiagnosticsBuilderProgram>({
     scenario,
@@ -200,6 +201,7 @@ export function runWatchBaseline<T extends ts.BuilderProgram = ts.EmitAndSemanti
     edits,
     watchOrSolution,
     useSourceOfProjectReferenceRedirect,
+    userResolvedModuleNames,
 }: RunWatchBaseline<T>) {
     baseline.push(`${sys.getExecutingFilePath()} ${commandLineArgs.join(" ")}`);
     let programs = watchBaseline({
@@ -225,6 +227,7 @@ export function runWatchBaseline<T extends ts.BuilderProgram = ts.EmitAndSemanti
                 caption,
                 resolutionCache: (watchOrSolution as ts.WatchOfConfigFile<T> | undefined)?.getResolutionCache?.(),
                 useSourceOfProjectReferenceRedirect,
+                userResolvedModuleNames,
             });
         }
     }
@@ -245,6 +248,7 @@ export interface WatchBaseline extends BaselineBase, TscWatchCheckOptions {
     caption?: string;
     resolutionCache?: ts.ResolutionCache;
     useSourceOfProjectReferenceRedirect?: () => boolean;
+    userResolvedModuleNames?: true;
 }
 export function watchBaseline({
     baseline,
@@ -256,6 +260,7 @@ export function watchBaseline({
     caption,
     resolutionCache,
     useSourceOfProjectReferenceRedirect,
+    userResolvedModuleNames,
 }: WatchBaseline) {
     if (baselineSourceMap) generateSourceMapBaselineFiles(sys);
     const programs = getPrograms();
@@ -274,6 +279,7 @@ export function watchBaseline({
             programs[0][0],
             resolutionCache,
             useSourceOfProjectReferenceRedirect,
+            userResolvedModuleNames,
         );
     }
     return programs;
@@ -283,7 +289,8 @@ function verifyProgramStructureAndResolutionCache(
     sys: TscWatchSystem,
     program: ts.Program,
     resolutionCache: ts.ResolutionCache,
-    useSourceOfProjectReferenceRedirect?: () => boolean,
+    useSourceOfProjectReferenceRedirect: (() => boolean) | undefined,
+    userResolvedModuleNames: true | undefined,
 ) {
     const options = program.getCompilerOptions();
     const compilerHost = ts.createCompilerHostWorker(options, /*setParentNodes*/ undefined, sys);
@@ -300,25 +307,30 @@ function verifyProgramStructureAndResolutionCache(
         program,
         caption,
     );
-    verifyResolutionCache(resolutionCache, program, {
-        ...compilerHost,
+    verifyResolutionCache(
+        resolutionCache,
+        program,
+        {
+            ...compilerHost,
+            getCompilerHost: () => compilerHost,
+            toPath: fileName => sys.toPath(fileName),
+            getCompilationSettings: () => options,
+            fileIsOpen: ts.returnFalse,
+            getCurrentProgram: () => program,
+            preferNonRecursiveWatch: sys.preferNonRecursiveWatch,
 
-        getCompilerHost: () => compilerHost,
-        toPath: fileName => sys.toPath(fileName),
-        getCompilationSettings: () => options,
-        fileIsOpen: ts.returnFalse,
-        getCurrentProgram: () => program,
-        preferNonRecursiveWatch: sys.preferNonRecursiveWatch,
-
-        watchDirectoryOfFailedLookupLocation: ts.returnNoopFileWatcher,
-        watchAffectingFileLocation: ts.returnNoopFileWatcher,
-        onInvalidatedResolution: ts.noop,
-        watchTypeRootsDirectory: ts.returnNoopFileWatcher,
-        onChangedAutomaticTypeDirectiveNames: ts.noop,
-        scheduleInvalidateResolutionsOfFailedLookupLocations: ts.noop,
-        getCachedDirectoryStructureHost: ts.returnUndefined,
-        writeLog: ts.noop,
-    }, caption);
+            watchDirectoryOfFailedLookupLocation: ts.returnNoopFileWatcher,
+            watchAffectingFileLocation: ts.returnNoopFileWatcher,
+            onInvalidatedResolution: ts.noop,
+            watchTypeRootsDirectory: ts.returnNoopFileWatcher,
+            onChangedAutomaticTypeDirectiveNames: ts.noop,
+            scheduleInvalidateResolutionsOfFailedLookupLocations: ts.noop,
+            getCachedDirectoryStructureHost: ts.returnUndefined,
+            writeLog: ts.noop,
+        },
+        caption,
+        userResolvedModuleNames,
+    );
 }
 export interface VerifyTscWatch extends TscWatchCompile {
     baselineIncremental?: boolean;
