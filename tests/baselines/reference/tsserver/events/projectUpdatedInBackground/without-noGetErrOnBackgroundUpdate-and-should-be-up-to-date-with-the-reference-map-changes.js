@@ -368,6 +368,10 @@ Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /users/username/projec
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /users/username/projects/project/moduleFile2.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /users/username/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined WatchType: Closed Script info
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project/moduleFile1 1 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project/moduleFile1 1 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project 0 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project 0 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/username/projects/project/tsconfig.json projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/users/username/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (6)
@@ -440,15 +444,15 @@ After running Timeout callback:: count: 1
 PolledWatches::
 /users/username/projects/node_modules/@types:
   {"pollingInterval":500}
-/users/username/projects/project/moduleFile1:
-  {"pollingInterval":500}
 /users/username/projects/project/node_modules/@types:
+  {"pollingInterval":500}
+
+PolledWatches *deleted*::
+/users/username/projects/project/moduleFile1:
   {"pollingInterval":500}
 
 FsWatches::
 /a/lib/lib.d.ts: *new*
-  {}
-/users/username/projects/project:
   {}
 /users/username/projects/project/file1Consumer2.ts: *new*
   {}
@@ -459,6 +463,10 @@ FsWatches::
 /users/username/projects/project/moduleFile2.ts: *new*
   {}
 /users/username/projects/project/tsconfig.json:
+  {}
+
+FsWatches *deleted*::
+/users/username/projects/project:
   {}
 
 FsWatchesRecursive::
@@ -750,10 +758,6 @@ ScriptInfos::
 
 Info seq  [hh:mm:ss:mss] Running: /users/username/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /users/username/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project/moduleFile1 1 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project/moduleFile1 1 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project 0 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/username/projects/project 0 undefined Project: /users/username/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/username/projects/project/tsconfig.json projectStateVersion: 4 projectProgramVersion: 2 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/users/username/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (6)
@@ -796,38 +800,6 @@ Info seq  [hh:mm:ss:mss] event:
       }
     }
 After running Timeout callback:: count: 1
-
-PolledWatches::
-/users/username/projects/node_modules/@types:
-  {"pollingInterval":500}
-/users/username/projects/project/node_modules/@types:
-  {"pollingInterval":500}
-
-PolledWatches *deleted*::
-/users/username/projects/project/moduleFile1:
-  {"pollingInterval":500}
-
-FsWatches::
-/a/lib/lib.d.ts:
-  {}
-/users/username/projects/project/file1Consumer2.ts:
-  {}
-/users/username/projects/project/globalFile3.ts:
-  {}
-/users/username/projects/project/moduleFile1.ts:
-  {}
-/users/username/projects/project/moduleFile2.ts:
-  {}
-/users/username/projects/project/tsconfig.json:
-  {}
-
-FsWatches *deleted*::
-/users/username/projects/project:
-  {}
-
-FsWatchesRecursive::
-/users/username/projects/project:
-  {}
 
 Timeout callback:: count: 1
 23: checkOne *new*
