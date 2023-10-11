@@ -1492,10 +1492,9 @@ export class ProjectService {
             case ActionSet:
                 // Update the typing files and update the project
                 project.updateTypingFiles(
-                    response.compilerOptions,
-                    response.typeAcquisition,
-                    response.unresolvedImports,
+                    response,
                     response.typings,
+                    /*scheduleUpdate*/ true,
                 );
                 return;
             case ActionInvalidate:
