@@ -462,7 +462,8 @@ ScriptInfos::
         /dev/null/inferredProject1*
 /tmp/node_modules/foo/index.d.ts *new*
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
 
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* projectStateVersion: 3 projectProgramVersion: 2 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -472,104 +473,9 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	/a/b/node_modules/fooo/index.d.ts Text-1 "export var x: string;"
 	/a/b/app.js SVC-1-0 "import * as a from \"foo\";import * as x from \"fooo\";"
 
-
-	../../tmp/node_modules/foo/index.d.ts
-	  Imported via "foo" from file 'app.js'
-	node_modules/fooo/index.d.ts
-	  Imported via "fooo" from file 'app.js'
-	app.js
-	  Root file specified for compilation
-
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
 Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
-TI:: [hh:mm:ss:mss] Got install request
-    {
-      "projectName": "/dev/null/inferredProject1*",
-      "fileNames": [
-        "/a/b/app.js"
-      ],
-      "compilerOptions": {
-        "target": 1,
-        "jsx": 1,
-        "allowNonTsExtensions": true,
-        "allowJs": true,
-        "noEmitForJsFiles": true,
-        "maxNodeModuleJsDepth": 2
-      },
-      "typeAcquisition": {
-        "enable": true,
-        "include": [],
-        "exclude": []
-      },
-      "unresolvedImports": [],
-      "projectRootPath": "/a/b",
-      "kind": "discover"
-    }
-TI:: [hh:mm:ss:mss] Explicitly included types: []
-TI:: [hh:mm:ss:mss] Searching for typing names in /a/b/node_modules; all files: []
-TI:: [hh:mm:ss:mss]     Found package names: []
-TI:: [hh:mm:ss:mss] Inferred typings from unresolved imports: []
-TI:: [hh:mm:ss:mss] Finished typings discovery:
-    {
-      "cachedTypingPaths": [],
-      "newTypingNames": [],
-      "filesToWatch": [
-        "/a/b/bower_components",
-        "/a/b/node_modules"
-      ]
-    }
-TI:: [hh:mm:ss:mss] Sending response:
-    {
-      "kind": "action::watchTypingLocations",
-      "projectName": "/dev/null/inferredProject1*"
-    }
-TI:: [hh:mm:ss:mss] Sending response:
-    {
-      "projectName": "/dev/null/inferredProject1*",
-      "typeAcquisition": {
-        "enable": true,
-        "include": [],
-        "exclude": []
-      },
-      "compilerOptions": {
-        "target": 1,
-        "jsx": 1,
-        "allowNonTsExtensions": true,
-        "allowJs": true,
-        "noEmitForJsFiles": true,
-        "maxNodeModuleJsDepth": 2
-      },
-      "typings": [],
-      "unresolvedImports": [],
-      "kind": "action::set"
-    }
-Info seq  [hh:mm:ss:mss] event:
-    {
-      "seq": 0,
-      "type": "event",
-      "event": "setTypings",
-      "body": {
-        "projectName": "/dev/null/inferredProject1*",
-        "typeAcquisition": {
-          "enable": true,
-          "include": [],
-          "exclude": []
-        },
-        "compilerOptions": {
-          "target": 1,
-          "jsx": 1,
-          "allowNonTsExtensions": true,
-          "allowJs": true,
-          "noEmitForJsFiles": true,
-          "maxNodeModuleJsDepth": 2
-        },
-        "typings": [],
-        "unresolvedImports": [],
-        "kind": "action::set"
-      }
-    }
-TI:: [hh:mm:ss:mss] No new typings were requested as a result of typings discovery
 Info seq  [hh:mm:ss:mss] Resolution from : /a/b/app.js for "fooo" goes to: {
   "resolvedFileName": "/a/b/node_modules/fooo/index.d.ts",
   "extension": ".d.ts",
@@ -583,20 +489,6 @@ Projects::
     projectStateVersion: 3
     projectProgramVersion: 3 *changed*
     dirty: false *changed*
-
-ScriptInfos::
-/a/b/app.js (Open)
-    version: SVC-1-0
-    containingProjects: 1
-        /dev/null/inferredProject1* *default*
-/a/b/node_modules/fooo/index.d.ts
-    version: Text-1
-    containingProjects: 1
-        /dev/null/inferredProject1*
-/tmp/node_modules/foo/index.d.ts *changed*
-    version: Text-1
-    containingProjects: 1 *changed*
-        /dev/null/inferredProject1* *new*
 
 Info seq  [hh:mm:ss:mss] request:
     {

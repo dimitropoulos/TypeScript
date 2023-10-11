@@ -498,7 +498,8 @@ ScriptInfos::
         /dev/null/inferredProject1*
 /tmp/node_modules/foo/index.d.ts *new*
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
 
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* projectStateVersion: 3 projectProgramVersion: 2 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -625,6 +626,32 @@ Projects::
     projectStateVersion: 3
     projectProgramVersion: 3 *changed*
     dirty: false *changed*
+
+ScriptInfos::
+/a/b/app.js (Open)
+    version: SVC-1-0
+    containingProjects: 1
+        /dev/null/inferredProject1* *default*
+/a/b/node_modules/fooo/index.d.ts
+    version: Text-1
+    containingProjects: 1
+        /dev/null/inferredProject1*
+/tmp/node_modules/foo/a/a.d.ts
+    version: Text-1
+    containingProjects: 1
+        /dev/null/inferredProject1*
+/tmp/node_modules/foo/a/b.d.ts
+    version: Text-1
+    containingProjects: 1
+        /dev/null/inferredProject1*
+/tmp/node_modules/foo/a/c.d.ts
+    version: Text-1
+    containingProjects: 1
+        /dev/null/inferredProject1*
+/tmp/node_modules/foo/index.d.ts *changed*
+    version: Text-1
+    containingProjects: 0 *changed*
+        /dev/null/inferredProject1* *deleted*
 
 Info seq  [hh:mm:ss:mss] request:
     {

@@ -471,7 +471,8 @@ ScriptInfos::
         /dev/null/inferredProject1*
 /tmp/node_modules/node/index.d.ts *new*
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
 
 Before request
 
@@ -515,7 +516,8 @@ ScriptInfos::
         /dev/null/inferredProject1*
 /tmp/node_modules/node/index.d.ts
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
 
 Before running Timeout callback:: count: 2
 3: /dev/null/inferredProject1*
@@ -529,14 +531,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
 	/tmp/node_modules/node/index.d.ts Text-1 "\ndeclare module \"net\" {\n    export type n = number;\n}\ndeclare module \"stream\" {\n    export type s = string;\n}"
 	/a/b/app.js SVC-1-1 "// @ts-check\n\nconst net = require(\"net\");\nconst stream = require(\"s tream\");"
-
-
-	../lib/lib.d.ts
-	  Default library for target 'es5'
-	../../tmp/node_modules/node/index.d.ts
-	  Imported via "net" from file 'app.js'
-	app.js
-	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
@@ -674,20 +668,6 @@ Projects::
     projectStateVersion: 3
     projectProgramVersion: 3 *changed*
     dirty: false *changed*
-
-ScriptInfos::
-/a/b/app.js (Open)
-    version: SVC-1-1
-    containingProjects: 1
-        /dev/null/inferredProject1* *default*
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /dev/null/inferredProject1*
-/tmp/node_modules/node/index.d.ts *changed*
-    version: Text-1
-    containingProjects: 1 *changed*
-        /dev/null/inferredProject1* *new*
 
 Before request
 

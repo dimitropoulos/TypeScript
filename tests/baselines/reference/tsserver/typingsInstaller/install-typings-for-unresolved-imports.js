@@ -473,11 +473,13 @@ ScriptInfos::
         /dev/null/inferredProject1* *default*
 /a/cache/node_modules/@types/commander/index.d.ts *new*
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
 /a/cache/node_modules/@types/ember__component/index.d.ts *new*
     version: Text-1
     containingProjects: 1
         /dev/null/inferredProject1*
 /a/cache/node_modules/@types/node/index.d.ts *new*
     version: Text-1
-    containingProjects: 0
+    containingProjects: 1
+        /dev/null/inferredProject1*
