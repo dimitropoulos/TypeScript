@@ -122,16 +122,6 @@ Info seq  [hh:mm:ss:mss] 	Files (8)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /packages/mylib/mysubdir/myclass.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /packages/mylib/mysubdir/myclass2.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /packages/mylib/mysubdir/index.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /packages/mylib/index.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /src/index.ts:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1426,9 +1416,6 @@ Info seq  [hh:mm:ss:mss] 	Files (8)
 	/src/index.ts SVC-2-1 "import { MyClass } from \"../packages/mylib\";\n\nconst a = new MyClass();\nconst b = new MyClass2();"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /src/index.ts:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8 Done: []
 Info seq  [hh:mm:ss:mss] Project '/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (8)
 
@@ -4302,9 +4289,6 @@ Info seq  [hh:mm:ss:mss] 	Files (8)
 	/src/index.ts SVC-2-34 "import { MyClass } from \"mylib\";\n\nconst a = new MyClass();\nconst b = new MyClass2();"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /src/index.ts:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 8 Done: []
 Info seq  [hh:mm:ss:mss] getCompletionData: Get current token: *
 Info seq  [hh:mm:ss:mss] getCompletionData: Is inside comment: *
 Info seq  [hh:mm:ss:mss] getCompletionData: Get previous token: *

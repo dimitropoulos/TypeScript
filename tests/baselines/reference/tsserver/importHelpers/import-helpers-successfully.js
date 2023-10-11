@@ -95,11 +95,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/type.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file1.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file2.ts:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -553,11 +548,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '../**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/type.ts:: ["tslib"]
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file1.ts:: ["tslib"]
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file2.ts:: ["tslib"]
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: ["tslib"]
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
