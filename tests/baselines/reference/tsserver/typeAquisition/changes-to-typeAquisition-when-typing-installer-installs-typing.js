@@ -850,11 +850,43 @@ Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/user/proje
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/user/projects/project1/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Directory location for typing installer
 TI:: [hh:mm:ss:mss] Closing file watchers for project '/users/user/projects/project1/jsconfig.json' - done.
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json
-Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json projectStateVersion: 4 projectProgramVersion: 3 structureChanged: false structureIsReused:: Completely Elapsed:: *ms
+Info seq  [hh:mm:ss:mss] ======== Resolving module 'bar' from '/users/user/projects/project1/app.js'. ========
+Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'.
+Info seq  [hh:mm:ss:mss] Loading module 'bar' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Info seq  [hh:mm:ss:mss] Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.tsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.tsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/projects/project1/node_modules/@types' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/projects/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Loading module 'bar' from 'node_modules' folder, target file types: JavaScript.
+Info seq  [hh:mm:ss:mss] Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.js' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.jsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.js' exists - use it as a name resolution result.
+Info seq  [hh:mm:ss:mss] Resolving real path for '/users/user/projects/project1/node_modules/bar/index.js', result '/users/user/projects/project1/node_modules/bar/index.js'.
+Info seq  [hh:mm:ss:mss] ======== Module name 'bar' was successfully resolved to '/users/user/projects/project1/node_modules/bar/index.js'. ========
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /users/user/projects/typings/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /users/user/projects/typings/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json projectStateVersion: 4 projectProgramVersion: 3 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/users/user/projects/project1/jsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
-	/users/user/projects/typings/node_modules/@types/bar/index.d.ts Text-1 "export const x = 1;"
+	/users/user/projects/project1/node_modules/bar/index.js Text-1 "export const x = 1"
 	/users/user/projects/project1/app.js SVC-1-0 "var x = require('bar');"
+
+
+	node_modules/bar/index.js
+	  Imported via 'bar' from file 'app.js'
+	app.js
+	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] event:
@@ -977,14 +1009,30 @@ FsWatchesRecursive::
   {}
 /users/user/projects/project1/node_modules:
   {}
+
+FsWatchesRecursive *deleted*::
 /users/user/projects/typings/node_modules:
   {}
 
 Projects::
 /users/user/projects/project1/jsconfig.json (Configured) *changed*
     projectStateVersion: 4
-    projectProgramVersion: 3
+    projectProgramVersion: 4 *changed*
     dirty: false *changed*
+
+ScriptInfos::
+/users/user/projects/project1/app.js (Open)
+    version: SVC-1-0
+    containingProjects: 1
+        /users/user/projects/project1/jsconfig.json *default*
+/users/user/projects/project1/node_modules/bar/index.js *changed*
+    version: Text-1
+    containingProjects: 1 *changed*
+        /users/user/projects/project1/jsconfig.json *new*
+/users/user/projects/typings/node_modules/@types/bar/index.d.ts *changed*
+    version: Text-1
+    containingProjects: 0 *changed*
+        /users/user/projects/project1/jsconfig.json *deleted*
 
 Info seq  [hh:mm:ss:mss] FileWatcher:: Triggered with /users/user/projects/project1/jsconfig.json 1:: WatchInfo: /users/user/projects/project1/jsconfig.json 2000 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Config file
 Info seq  [hh:mm:ss:mss] Scheduled: /users/user/projects/project1/jsconfig.json
@@ -1010,7 +1058,7 @@ Timeout callback:: count: 2
 Projects::
 /users/user/projects/project1/jsconfig.json (Configured) *changed*
     projectStateVersion: 5 *changed*
-    projectProgramVersion: 3
+    projectProgramVersion: 4
     dirty: true *changed*
 
 Info seq  [hh:mm:ss:mss] Running: /users/user/projects/project1/jsconfig.json
@@ -1039,11 +1087,48 @@ Info seq  [hh:mm:ss:mss] Config: /users/user/projects/project1/jsconfig.json : {
  }
 }
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json
-Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json projectStateVersion: 5 projectProgramVersion: 3 structureChanged: false structureIsReused:: Completely Elapsed:: *ms
+Info seq  [hh:mm:ss:mss] ======== Resolving module 'bar' from '/users/user/projects/project1/app.js'. ========
+Info seq  [hh:mm:ss:mss] Module resolution kind is not specified, using 'Node10'.
+Info seq  [hh:mm:ss:mss] Loading module 'bar' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Info seq  [hh:mm:ss:mss] Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.tsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.tsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/projects/project1/node_modules/@types' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/projects/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/user/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/users/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Directory '/node_modules' does not exist, skipping all lookups in it.
+Info seq  [hh:mm:ss:mss] Loading module 'bar' from 'node_modules' folder, target file types: JavaScript.
+Info seq  [hh:mm:ss:mss] Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.js' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar.jsx' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/project1/node_modules/bar/index.js' exists - use it as a name resolution result.
+Info seq  [hh:mm:ss:mss] Resolving real path for '/users/user/projects/project1/node_modules/bar/index.js', result '/users/user/projects/project1/node_modules/bar/index.js'.
+Info seq  [hh:mm:ss:mss] ======== Module name 'bar' was successfully resolved to '/users/user/projects/project1/node_modules/bar/index.js'. ========
+Info seq  [hh:mm:ss:mss] Auto discovery for typings is enabled in project '/users/user/projects/project1/jsconfig.json'. Running extra resolution pass for module 'bar' using cache location '/users/user/projects/typings'.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/bar.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar.d.ts' does not exist.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar/index.d.ts' exists - use it as a name resolution result.
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /users/user/projects/typings/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /users/user/projects/typings/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /users/user/projects/project1/jsconfig.json projectStateVersion: 5 projectProgramVersion: 4 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/users/user/projects/project1/jsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
 	/users/user/projects/typings/node_modules/@types/bar/index.d.ts Text-1 "export const x = 1;"
 	/users/user/projects/project1/app.js SVC-1-0 "var x = require('bar');"
+
+
+	../typings/node_modules/@types/bar/index.d.ts
+	  Imported via 'bar' from file 'app.js'
+	app.js
+	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
@@ -1269,14 +1354,28 @@ FsWatchesRecursive::
   {}
 /users/user/projects/project1/node_modules:
   {}
-/users/user/projects/typings/node_modules:
+/users/user/projects/typings/node_modules: *new*
   {}
 
 Projects::
 /users/user/projects/project1/jsconfig.json (Configured) *changed*
     projectStateVersion: 5
-    projectProgramVersion: 3
+    projectProgramVersion: 5 *changed*
     dirty: false *changed*
+
+ScriptInfos::
+/users/user/projects/project1/app.js (Open)
+    version: SVC-1-0
+    containingProjects: 1
+        /users/user/projects/project1/jsconfig.json *default*
+/users/user/projects/project1/node_modules/bar/index.js *changed*
+    version: Text-1
+    containingProjects: 0 *changed*
+        /users/user/projects/project1/jsconfig.json *deleted*
+/users/user/projects/typings/node_modules/@types/bar/index.d.ts *changed*
+    version: Text-1
+    containingProjects: 1 *changed*
+        /users/user/projects/project1/jsconfig.json *new*
 
 Before running Timeout callback:: count: 0
 
