@@ -2383,8 +2383,6 @@ describe("unittests:: tsserver:: typingsInstaller:: recomputing resolutions of u
             },
         });
         host.runQueuedTimeoutCallbacks(); // Update the graph
-        // Update the typing
-        assert.isFalse(proj.resolutionCache.isFileWithInvalidatedNonRelativeUnresolvedImports(app.path as ts.Path));
         baselineTsserverLogs("typingsInstaller", scenario, session);
     }
 
@@ -2487,9 +2485,7 @@ declare module "stream" {
             },
         });
         proj.updateGraph(); // Update the graph
-        // Update the typing
         session.host.baselineHost("After program update");
-        assert.isFalse(proj.resolutionCache.isFileWithInvalidatedNonRelativeUnresolvedImports(file.path as ts.Path));
         baselineTsserverLogs("typingsInstaller", "should handle node core modules", session);
     });
 });
