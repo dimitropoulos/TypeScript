@@ -101,6 +101,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /package.json:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (4)
@@ -233,6 +239,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by include pattern 'src' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /packages/web/src/index.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /packages/web/package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] AutoImportProviderProject: found 1 root files in 1 dependencies 0 referenced projects in * ms
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*

@@ -46,6 +46,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /^memfs:/foo.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (2)
 
@@ -161,6 +165,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /random/foo2.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] `remove Project::
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (2)

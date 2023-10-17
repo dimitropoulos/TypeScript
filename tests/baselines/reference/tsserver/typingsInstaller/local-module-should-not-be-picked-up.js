@@ -76,6 +76,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/config.js:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/app.js:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 TI:: Creating typing installer
 
 PolledWatches::

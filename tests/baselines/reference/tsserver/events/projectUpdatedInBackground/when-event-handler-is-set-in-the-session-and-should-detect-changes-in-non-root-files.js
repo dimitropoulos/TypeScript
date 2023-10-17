@@ -62,6 +62,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /users/username/projects/project/file1consumer1.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -331,6 +334,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /users/username/projects/project/modulefile1.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /users/username/projects/project/file1consumer1.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

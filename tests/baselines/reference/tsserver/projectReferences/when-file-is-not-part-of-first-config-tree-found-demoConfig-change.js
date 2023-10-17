@@ -139,6 +139,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by include pattern '**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -288,6 +292,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/demos/helpers.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component-demos.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -386,6 +396,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '../app/**/*-demos.*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/demos/helpers.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component-demos.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -629,6 +644,9 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/demos/helpers.ts Text-1 "export const foo = 1;\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component-demos.ts:: ["demos"]
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: ["demos"]
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/demos/tsconfig.json
 Info seq  [hh:mm:ss:mss] event:
     {
@@ -654,6 +672,8 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by include pattern '**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -881,6 +901,9 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/app/Component.ts Text-1 "export const Component = () => {}\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component-demos.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/demos/tsconfig.json
 Info seq  [hh:mm:ss:mss] event:
     {
@@ -910,6 +933,9 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '../app/**/*-demos.*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/project/app/component-demos.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1108,6 +1134,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /home/src/projects/random/random.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

@@ -24,6 +24,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/file1.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (1)
 
@@ -209,6 +212,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/file1.js:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 TI:: Creating typing installer
 
 Projects::

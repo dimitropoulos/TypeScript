@@ -158,6 +158,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /index.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] event:
     {

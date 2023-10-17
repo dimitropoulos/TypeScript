@@ -121,6 +121,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/a.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -397,6 +400,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /b/b.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -714,6 +720,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/bin/a.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /b/bin/b.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /user/user.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] `remove Project::
 Info seq  [hh:mm:ss:mss] Project '/b/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (1)
@@ -854,6 +865,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/a.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1150,6 +1164,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /dummy/dummy.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] `remove Project::
 Info seq  [hh:mm:ss:mss] Project '/a/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (1)

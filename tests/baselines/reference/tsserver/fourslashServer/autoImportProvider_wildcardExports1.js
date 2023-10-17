@@ -93,6 +93,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /node_modules/pkg/package.json:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (4)
 
@@ -202,6 +208,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  File is ECMAScript module because 'package.json' has field "type" with value "module"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /main.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] AutoImportProviderProject: found 6 root files in 1 dependencies 0 referenced projects in * ms
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /node_modules/pkg/a/a1.d.ts 500 undefined WatchType: Closed Script info
