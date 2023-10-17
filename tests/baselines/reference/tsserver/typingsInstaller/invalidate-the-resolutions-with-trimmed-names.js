@@ -39,6 +39,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/node_modules/fooo/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/app.js:: ["foo","foo","foo"]
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 2 Done: ["foo"]
 TI:: Creating typing installer
 
 PolledWatches::
@@ -361,6 +365,13 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 6
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /tmp/node_modules/foo/a/a.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /tmp/node_modules/foo/a/b.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /tmp/node_modules/foo/a/c.d.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/app.js:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /tmp/node_modules/foo/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 6 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -512,6 +523,8 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 5
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 5 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -689,6 +702,9 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	/a/b/app.js SVC-1-1 "import * as bar from \"bar\";\n                    import * as a from \"foo/a/a\";\n                    import * as b from \"foo/a/b\";\n                    import * as c from \"foo/a/c\";\n            import * as x from \"fooo\";"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 5
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/app.js:: ["bar"]
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 5 Done: ["bar"]
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",

@@ -95,6 +95,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/type.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file1.ts:: []
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file2.ts:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -215,6 +220,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /file3.js:: []
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
@@ -545,6 +553,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern '../**/*' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/type.ts:: ["tslib"]
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file1.ts:: ["tslib"]
+Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/file2.ts:: ["tslib"]
+Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: ["tslib"]
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
