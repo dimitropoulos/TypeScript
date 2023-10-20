@@ -1329,6 +1329,7 @@ export class ProjectService {
     /** @internal */ baseline: (title?: string) => void = noop;
     /** @internal */ verifyDocumentRegistry = noop;
     /** @internal */ verifyProgram: (project: Project) => void = noop;
+    /** @internal */ verifyUnresovedImports: (project: Project) => void = noop;
     /** @internal */ onProjectCreation: (project: Project) => void = noop;
     /** @internal */ canUseWatchEvents: boolean;
 
