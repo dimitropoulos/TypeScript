@@ -449,10 +449,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/data/node_modules/@types/lodash/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/data/node_modules/@types/react/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 4 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/a/app/test.csproj",
