@@ -1093,11 +1093,3 @@ ScriptInfos::
     version: Text-1
     containingProjects: 1
         /users/user/projects/project1/jsconfig.json
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
