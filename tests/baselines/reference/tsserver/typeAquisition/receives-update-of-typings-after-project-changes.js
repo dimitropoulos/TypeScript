@@ -743,10 +743,6 @@ Info seq  [hh:mm:ss:mss] event:
     }
 After running PendingInstalls callback:: count: 0
 
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
 Info seq  [hh:mm:ss:mss] FileWatcher:: Triggered with /users/user/projects/project1/jsconfig.json 1:: WatchInfo: /users/user/projects/project1/jsconfig.json 2000 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Config file
 Info seq  [hh:mm:ss:mss] Scheduled: /users/user/projects/project1/jsconfig.json
 Info seq  [hh:mm:ss:mss] getConfigFileNameForFile:: File: /users/user/projects/project1/app.js ProjectRootPath: undefined:: Result: /users/user/projects/project1/jsconfig.json
@@ -1089,11 +1085,3 @@ ScriptInfos::
     version: Text-1
     containingProjects: 1
         /users/user/projects/project1/jsconfig.json
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0

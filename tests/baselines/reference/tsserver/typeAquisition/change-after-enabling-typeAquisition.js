@@ -695,25 +695,9 @@ Projects::
     projectStateVersion: 2
     projectProgramVersion: 2 *changed*
 
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
 Before running PendingInstalls callback:: count: 0
 
 After running PendingInstalls callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
 
 Before running Timeout callback:: count: 0
 
