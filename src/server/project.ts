@@ -1474,7 +1474,6 @@ export abstract class Project implements LanguageServiceHost, ModuleResolutionHo
             this.lastCachedUnresolvedImportsList ??= getUnresolvedImports(
                 this.program!,
                 this.cachedUnresolvedImportsPerFile,
-                s => this.writeLog(s),
             );
             this.enqueueInstallTypingsForProject(hasAddedorRemovedFiles);
         }
@@ -2406,10 +2405,8 @@ export abstract class Project implements LanguageServiceHost, ModuleResolutionHo
 export function getUnresolvedImports(
     program: Program,
     cachedUnresolvedImportsPerFile: Map<Path, readonly string[]>,
-    writeLog: (s: string) => void,
 ): SortedReadonlyArray<string> {
     const sourceFiles = program.getSourceFiles();
-    writeLog(`getUnresolvedImports:: Files:: ${sourceFiles.length}`);
     tracing?.push(tracing.Phase.Session, "getUnresolvedImports", { count: sourceFiles.length });
     const ambientModules = program.getTypeChecker().getAmbientModules().map(mod => stripQuotes(mod.getName()));
     const result = sortAndDeduplicate(flatMap(sourceFiles, sourceFile =>
@@ -2418,10 +2415,8 @@ export function getUnresolvedImports(
             sourceFile,
             ambientModules,
             cachedUnresolvedImportsPerFile,
-            writeLog,
         )));
     tracing?.pop();
-    writeLog(`getUnresolvedImports:: Files:: ${sourceFiles.length} Done: ${JSON.stringify(result)}`);
     return result;
 }
 function extractUnresolvedImportsFromSourceFile(
@@ -2429,7 +2424,6 @@ function extractUnresolvedImportsFromSourceFile(
     file: SourceFile,
     ambientModules: readonly string[],
     cachedUnresolvedImportsPerFile: Map<Path, readonly string[]>,
-    writeLog: (s: string) => void,
 ): readonly string[] {
     return getOrUpdate(cachedUnresolvedImportsPerFile, file.path, () => {
         let unresolvedImports: string[] | undefined;
@@ -2442,7 +2436,6 @@ function extractUnresolvedImportsFromSourceFile(
                 unresolvedImports = append(unresolvedImports, parsePackageName(name).packageName);
             }
         }, file);
-        writeLog(`extractUnresolvedImportsFromSourceFile:: ${file.path}:: ${JSON.stringify(unresolvedImports || emptyArray)}`);
         return unresolvedImports || emptyArray;
     });
 }
