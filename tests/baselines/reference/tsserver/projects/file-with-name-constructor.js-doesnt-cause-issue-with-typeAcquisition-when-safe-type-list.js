@@ -87,11 +87,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/f1.js:: ["s"]
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/b/constructor.js:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 3 Done: ["s"]
 TI:: Creating typing installer
 
 FsWatches::

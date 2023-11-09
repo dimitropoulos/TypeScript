@@ -43,9 +43,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1
-Info seq  [hh:mm:ss:mss] extractUnresolvedImportsFromSourceFile:: /a/app.js:: []
-Info seq  [hh:mm:ss:mss] getUnresolvedImports:: Files:: 1 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
