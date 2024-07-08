@@ -889,17 +889,7 @@ Reusing resolution of module 'pkg0' from '/home/src/project/bFileWithImports.ts'
 Reusing resolution of module './aRandomFileForImport' from '/home/src/project/aFileWithImports.ts' of old program, it was successfully resolved to '/home/src/project/aRandomFileForImport.ts'.
 Reusing resolution of module './aRandomFileForImport2' from '/home/src/project/aFileWithImports.ts' of old program, it was successfully resolved to '/home/src/project/aRandomFileForImport2.ts'.
 ======== Resolving module 'pkg0' from '/home/src/project/bRandomFileForImport.ts'. ========
-Module resolution kind is not specified, using 'Node10'.
-Loading module 'pkg0' from 'node_modules' folder, target file types: TypeScript, Declaration.
-Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
-File '/home/src/project/node_modules/pkg0/package.json' does not exist according to earlier cached lookups.
-File '/home/src/project/node_modules/pkg0.ts' does not exist.
-File '/home/src/project/node_modules/pkg0.tsx' does not exist.
-File '/home/src/project/node_modules/pkg0.d.ts' does not exist.
-File '/home/src/project/node_modules/pkg0/index.ts' does not exist.
-File '/home/src/project/node_modules/pkg0/index.tsx' does not exist.
-File '/home/src/project/node_modules/pkg0/index.d.ts' exists - use it as a name resolution result.
-Resolving real path for '/home/src/project/node_modules/pkg0/index.d.ts', result '/home/src/project/node_modules/pkg0/index.d.ts'.
+Resolution for module 'pkg0' was found in cache from location '/home/src/project'.
 ======== Module name 'pkg0' was successfully resolved to '/home/src/project/node_modules/pkg0/index.d.ts'. ========
 a/lib/lib.d.ts
   Default library for target 'es5'

@@ -4897,6 +4897,7 @@ export interface Program extends ScriptReferenceHost {
     getResolvedProjectReferenceToRedirect(fileName: string): ResolvedProjectReference | undefined;
     /** @internal */ forEachResolvedProjectReference<T>(cb: (resolvedProjectReference: ResolvedProjectReference) => T | undefined): T | undefined;
     /** @internal */ getResolvedProjectReferenceByPath(projectReferencePath: Path): ResolvedProjectReference | undefined;
+    /** @internal */ getRedirectReferenceForResolution(file: SourceFile): ResolvedProjectReference | undefined;
     /** @internal */ getRedirectReferenceForResolutionFromSourceOfProject(filePath: Path): ResolvedProjectReference | undefined;
     /** @internal */ isSourceOfProjectReferenceRedirect(fileName: string): boolean;
     /** @internal */ getCompilerOptionsForFile(file: SourceFile): CompilerOptions;
@@ -7963,8 +7964,15 @@ export interface ResolvedModuleWithFailedLookupLocations {
      * have been resolvable under different module resolution settings.
      */
     alternateResult?: string;
-    /** @internal */
-    globalCacheResolution?: boolean;
+    /**
+     * undefined - if resolved without augmenting resolution from global cache
+     * false - if typeAquisition was disabled and so the resolution was done without augmenting resolution from global cache
+     * true - if resolvedModule without global cache pass was undefined
+     * ResolvedModuleFull - result of resolvedModule without global cache pass
+     * This is used to calculate fileName to determine where common prefix to store resolutions for multiple directories
+     * We dont want to use final resolvedModule because we only want to depend on result without global cache pass
+     * @internal */
+    globalCacheResolution?: ResolvedModuleFull | boolean;
 }
 
 export interface ResolvedTypeReferenceDirective {

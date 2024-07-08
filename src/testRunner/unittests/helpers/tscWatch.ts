@@ -306,6 +306,7 @@ function verifyProgramStructureAndResolutionCache(
         }),
         program,
         caption,
+        userResolvedModuleNames,
     );
     verifyResolutionCache(
         resolutionCache,
