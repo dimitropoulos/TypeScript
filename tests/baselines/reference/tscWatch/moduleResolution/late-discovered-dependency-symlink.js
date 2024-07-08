@@ -203,20 +203,7 @@ Output::
 
 Reusing resolution of module 'package-b' from '/workspace/packageC/index.ts' of old program, it was successfully resolved to '/workspace/packageB/index.d.ts'.
 ======== Resolving module 'package-b' from '/workspace/packageC/package.json'. ========
-Module resolution kind is not specified, using 'Node10'.
-Loading module 'package-b' from 'node_modules' folder, target file types: TypeScript, Declaration.
-Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
-File '/workspace/packageC/node_modules/package-b/package.json' exists according to earlier cached lookups.
-File '/workspace/packageC/node_modules/package-b.ts' does not exist.
-File '/workspace/packageC/node_modules/package-b.tsx' does not exist.
-File '/workspace/packageC/node_modules/package-b.d.ts' does not exist.
-'package.json' does not have a 'typings' field.
-'package.json' does not have a 'types' field.
-'package.json' does not have a 'main' field.
-File '/workspace/packageC/node_modules/package-b/index.ts' does not exist.
-File '/workspace/packageC/node_modules/package-b/index.tsx' does not exist.
-File '/workspace/packageC/node_modules/package-b/index.d.ts' exists - use it as a name resolution result.
-Resolving real path for '/workspace/packageC/node_modules/package-b/index.d.ts', result '/workspace/packageB/index.d.ts'.
+Resolution for module 'package-b' was found in cache from location '/workspace/packageC'.
 ======== Module name 'package-b' was successfully resolved to '/workspace/packageB/index.d.ts'. ========
 ======== Resolving module 'package-a' from '/workspace/packageC/package.json'. ========
 Module resolution kind is not specified, using 'Node10'.
