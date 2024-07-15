@@ -14,6 +14,7 @@ import {
     compilerOptionsToConfigJson,
     libContent,
 } from "../helpers/contents.js";
+import { forEachTscPackageJsonScopeScenario } from "../helpers/packageJsonScope.js";
 import { verifyTsc } from "../helpers/tsc.js";
 import { verifyTscWatch } from "../helpers/tscWatch.js";
 import { loadProjectFromFiles } from "../helpers/vfs.js";
@@ -317,4 +318,14 @@ describe("unittests:: tsc:: moduleResolution::", () => {
             },
         ],
     });
+
+    forEachTscPackageJsonScopeScenario((subScenario, fs, edits, project) =>
+        verifyTsc({
+            scenario: "moduleResolution",
+            subScenario,
+            fs,
+            commandLineArgs: ["-p", project, "--explainFiles", "--extendedDiagnostics"],
+            edits: edits(),
+        })
+    );
 });

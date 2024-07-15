@@ -3,7 +3,12 @@ import * as Utils from "../../_namespaces/Utils.js";
 import { jsonToReadableText } from "../helpers.js";
 import { compilerOptionsToConfigJson } from "../helpers/contents.js";
 import {
+    forEachResolutionCacheLifeTimeScenario,
+    ResolutionCacheLifeTimeScenarios,
+} from "../helpers/resolutionCache.js";
+import {
     baselineTsserverLogs,
+    forEachTscWatchEdit,
     openExternalProjectForSession,
     openFilesForSession,
     setCompilerOptionsForInferredProjectsRequestForSession,
@@ -686,4 +691,34 @@ describe("unittests:: tsserver:: resolutionCache:: tsserverProjectSystem with pr
         openFilesForSession(["/users/username/projects/app/appB.ts"], session);
         baselineTsserverLogs("resolutionCache", "not sharing across references", session);
     });
+});
+
+describe("unittests:: tsserver:: resolutionCache:: resolution lifetime", () => {
+    forEachResolutionCacheLifeTimeScenario(
+        /*forTsserver*/ true,
+        (scenario, getHost, edits, _project, mainFile, kind) =>
+            it(scenario, () => {
+                const host = getHost();
+                const session = new TestSession(host);
+                openFilesForSession([mainFile], session);
+                forEachTscWatchEdit(session, edits(), ts.noop);
+                if (kind === ResolutionCacheLifeTimeScenarios.MultipleProjects) {
+                    // Try opening other project files
+                    applyOtherFileEdits(
+                        mainFile.endsWith("cMain.ts") ?
+                            mainFile.replace("cMain.ts", "bMain.ts") :
+                            mainFile.replace("bMain.ts", "cMain.ts"),
+                        mainFile.endsWith("cMain.ts") ? "bRandomFileForImport" : "cRandomFileForImport",
+                    );
+                    applyOtherFileEdits("/home/src/project/aMain.ts", "aRandomFileForImport");
+                }
+                baselineTsserverLogs("resolutionCache", scenario, session);
+                function applyOtherFileEdits(mainFile: string, file: string) {
+                    openFilesForSession([mainFile], session);
+                    session.logger.info(`modify ${file} by adding import`);
+                    host.prependFile(`/home/src/project/${file}.ts`, `export type { ImportInterface0 } from "pkg0";\n`);
+                    host.runQueuedTimeoutCallbacks();
+                }
+            }),
+    );
 });
