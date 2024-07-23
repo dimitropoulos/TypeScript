@@ -30,9 +30,9 @@ export function length(array: readonly any[] | undefined): number {
  *
  * @internal
  */
-export function forEach<T, U>(array: readonly T[] | undefined, callback: (element: T, index: number) => U | undefined): U | undefined {
+export function forEach<T, U>(array: readonly T[] | undefined, callback: (element: T, index: number) => U | undefined, startIndex?: number): U | undefined {
     if (array !== undefined) {
-        for (let i = 0; i < array.length; i++) {
+        for (let i = startIndex ?? 0; i < array.length; i++) {
             const result = callback(array[i], i);
             if (result) {
                 return result;

@@ -1546,8 +1546,8 @@ export function createTypeReferenceDirectiveResolutionCache(
 }
 
 /** @internal */
-export function getOptionsForLibraryResolution(options: CompilerOptions) {
-    return { moduleResolution: ModuleResolutionKind.Node10, traceResolution: options.traceResolution };
+export function getOptionsForLibraryResolution(options: CompilerOptions | undefined) {
+    return { moduleResolution: ModuleResolutionKind.Node10, traceResolution: options?.traceResolution };
 }
 
 /** @internal */
