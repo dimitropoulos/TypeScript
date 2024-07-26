@@ -1095,7 +1095,7 @@ Info seq  [hh:mm:ss:mss] Resolving real path for '/users/user/projects/project1/
 Info seq  [hh:mm:ss:mss] ======== Module name 'bar' was successfully resolved to '/users/user/projects/project1/node_modules/bar/index.js'. ========
 Info seq  [hh:mm:ss:mss] Auto discovery for typings is enabled in project '/users/user/projects/project1/jsconfig.json'. Running extra resolution pass for module 'bar' using cache location '/users/user/projects/typings'.
 Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/bar.d.ts' does not exist.
-Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar/package.json' does not exist.
 Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar.d.ts' does not exist.
 Info seq  [hh:mm:ss:mss] File '/users/user/projects/typings/node_modules/@types/bar/index.d.ts' exists - use it as a name resolution result.
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /users/user/projects/typings/node_modules 1 undefined Project: /users/user/projects/project1/jsconfig.json WatchType: Failed Lookup Locations

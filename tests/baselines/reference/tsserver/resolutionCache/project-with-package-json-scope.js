@@ -2505,8 +2505,8 @@ Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earl
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/src/projects/project/src/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/src/projects/project/package.json' does not exist.
-Info seq  [hh:mm:ss:mss] File '/src/projects/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/src/projects/package.json' does not exist.
+Info seq  [hh:mm:ss:mss] File '/src/package.json' does not exist.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/src/projects/project/src/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/src/projects/project/package.json' does not exist according to earlier cached lookups.

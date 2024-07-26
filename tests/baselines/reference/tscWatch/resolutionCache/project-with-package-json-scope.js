@@ -4859,8 +4859,8 @@ File '/a/package.json' does not exist according to earlier cached lookups.
 File '/package.json' does not exist according to earlier cached lookups.
 File '/src/projects/project/src/package.json' does not exist according to earlier cached lookups.
 File '/src/projects/project/package.json' does not exist.
-File '/src/projects/package.json' does not exist according to earlier cached lookups.
-File '/src/package.json' does not exist according to earlier cached lookups.
+File '/src/projects/package.json' does not exist.
+File '/src/package.json' does not exist.
 File '/package.json' does not exist according to earlier cached lookups.
 File '/src/projects/project/src/package.json' does not exist according to earlier cached lookups.
 File '/src/projects/project/package.json' does not exist according to earlier cached lookups.
