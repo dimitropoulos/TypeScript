@@ -67,7 +67,7 @@ type MyBarType = BarType;
 
 
 //// [/home/src/projects/project/node_modules/package1] symlink(/home/src/projects/project/packages/package1) Inode:: 17
-//// [/a/lib/lib.es2016.full.d.ts] Inode:: 20
+//// [/home/src/tslibs/ts/lib/lib.es2016.full.d.ts] Inode:: 21
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -219,7 +219,7 @@ Info seq  [hh:mm:ss:mss] Directory '/home/src/node_modules' does not exist, skip
 Info seq  [hh:mm:ss:mss] Directory '/home/node_modules' does not exist, skipping all lookups in it.
 Info seq  [hh:mm:ss:mss] Directory '/node_modules' does not exist, skipping all lookups in it.
 Info seq  [hh:mm:ss:mss] ======== Module name 'package1' was not resolved. ========
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.es2016.full.d.ts 500 undefined WatchType: Closed Script info
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.es2016.full.d.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -227,10 +227,10 @@ Info seq  [hh:mm:ss:mss] event:
       "event": "createFileWatcher",
       "body": {
         "id": 3,
-        "path": "/a/lib/lib.es2016.full.d.ts"
+        "path": "/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"
       }
     }
-Custom watchFile:: Added:: {"id":3,"path":"/a/lib/lib.es2016.full.d.ts"}
+Custom watchFile:: Added:: {"id":3,"path":"/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"}
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/packages/package2/src 1 undefined Project: /home/src/projects/project/packages/package2/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] event:
     {
@@ -392,11 +392,11 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /ho
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/packages/package2/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/packages/package2/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
-	/a/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
+	/home/src/tslibs/ts/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/packages/package2/src/index.ts SVC-1-0 "import { FooType, BarType } from \"package1\"\ntype MyFooType = FooType;\ntype MyBarType = BarType;\n"
 
 
-	../../../../../../a/lib/lib.es2016.full.d.ts
+	../../../../tslibs/ts/lib/lib.es2016.full.d.ts
 	  Default library for target 'es2016'
 	src/index.ts
 	  Matched by default include pattern '**/*'
@@ -507,14 +507,14 @@ Info seq  [hh:mm:ss:mss] response:
 After request
 
 PolledWatches::
-/a/lib/lib.es2016.full.d.ts: *new*
-  {"event":{"id":3,"path":"/a/lib/lib.es2016.full.d.ts"}}
 /home/src/projects/project/packages/package1/package.json: *new*
   {"event":{"id":10,"path":"/home/src/projects/project/packages/package1/package.json"}}
 /home/src/projects/project/packages/package2/package.json: *new*
   {"event":{"id":15,"path":"/home/src/projects/project/packages/package2/package.json"}}
 /home/src/projects/project/packages/package2/tsconfig.json: *new*
   {"event":{"id":1,"path":"/home/src/projects/project/packages/package2/tsconfig.json"}}
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts: *new*
+  {"event":{"id":3,"path":"/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"}}
 
 FsWatchesRecursive::
 /home/src/projects/node_modules: *new*
@@ -546,14 +546,14 @@ Projects::
     projectProgramVersion: 1
 
 ScriptInfos::
-/a/lib/lib.es2016.full.d.ts *new*
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/packages/package2/tsconfig.json
 /home/src/projects/project/packages/package2/src/index.ts (Open) *new*
     version: SVC-1-0
     containingProjects: 1
         /home/src/projects/project/packages/package2/tsconfig.json *default*
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts *new*
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/packages/package2/tsconfig.json
 
 Before request
 
@@ -701,20 +701,20 @@ Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/p
 Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/project/node_modules/package1","recursive":true,"ignoreUpdate":true}:: /home/src/projects/project/node_modules/package1/tsconfig.tsbuildinfo.readable.baseline.txt created
 Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/project/node_modules/package1","recursive":true,"ignoreUpdate":true}:: /home/src/projects/project/node_modules/package1/tsconfig.tsbuildinfo.readable.baseline.txt updated
 Before request
-//// [/home/src/projects/project/packages/package1/dist/index.js] Inode:: 22
+//// [/home/src/projects/project/packages/package1/dist/index.js] Inode:: 23
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
 
-//// [/home/src/projects/project/packages/package1/dist/index.d.ts] Inode:: 23
+//// [/home/src/projects/project/packages/package1/dist/index.d.ts] Inode:: 24
 export type FooType = "foo";
 export type BarType = "bar";
 
 
-//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo] Inode:: 24
+//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo] Inode:: 25
 {"root":["./src/index.ts"],"version":"FakeTSVersion"}
 
-//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo.readable.baseline.txt] Inode:: 25
+//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo.readable.baseline.txt] Inode:: 26
 {
   "root": [
     "./src/index.ts"
@@ -833,12 +833,12 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /ho
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/packages/package2/tsconfig.json projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/packages/package2/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (3)
-	/a/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
+	/home/src/tslibs/ts/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/packages/package1/dist/index.d.ts Text-1 "export type FooType = \"foo\";\nexport type BarType = \"bar\";\n"
 	/home/src/projects/project/packages/package2/src/index.ts SVC-1-0 "import { FooType, BarType } from \"package1\"\ntype MyFooType = FooType;\ntype MyBarType = BarType;\n"
 
 
-	../../../../../../a/lib/lib.es2016.full.d.ts
+	../../../../tslibs/ts/lib/lib.es2016.full.d.ts
 	  Default library for target 'es2016'
 	../package1/dist/index.d.ts
 	  Imported via "package1" from file 'src/index.ts' with packageId 'package1/dist/index.d.ts@1.0.0'
@@ -878,8 +878,6 @@ Info seq  [hh:mm:ss:mss] event:
 After running Timeout callback:: count: 0
 
 PolledWatches::
-/a/lib/lib.es2016.full.d.ts:
-  {"event":{"id":3,"path":"/a/lib/lib.es2016.full.d.ts"}}
 /home/src/projects/project/packages/package1/dist/index.d.ts: *new*
   {"event":{"id":16,"path":"/home/src/projects/project/packages/package1/dist/index.d.ts"}}
 /home/src/projects/project/packages/package1/package.json:
@@ -888,6 +886,8 @@ PolledWatches::
   {"event":{"id":15,"path":"/home/src/projects/project/packages/package2/package.json"}}
 /home/src/projects/project/packages/package2/tsconfig.json:
   {"event":{"id":1,"path":"/home/src/projects/project/packages/package2/tsconfig.json"}}
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts:
+  {"event":{"id":3,"path":"/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"}}
 
 FsWatchesRecursive::
 /home/src/projects/node_modules/@types:
@@ -922,10 +922,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.es2016.full.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/packages/package2/tsconfig.json
 /home/src/projects/project/packages/package1/dist/index.d.ts *new*
     version: Text-1
     containingProjects: 1
@@ -934,6 +930,10 @@ ScriptInfos::
     version: SVC-1-0
     containingProjects: 1
         /home/src/projects/project/packages/package2/tsconfig.json *default*
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/packages/package2/tsconfig.json
 
 Before running Timeout callback:: count: 0
 
@@ -1115,10 +1115,6 @@ Projects::
     dirty: true *changed*
 
 ScriptInfos::
-/a/lib/lib.es2016.full.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/packages/package2/tsconfig.json
 /home/src/projects/project/packages/package1/dist/index.d.ts *changed*
     version: Text-1
     pendingReloadFromDisk: true *changed*
@@ -1129,6 +1125,10 @@ ScriptInfos::
     version: SVC-1-0
     containingProjects: 1
         /home/src/projects/project/packages/package2/tsconfig.json *default*
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/packages/package2/tsconfig.json
 
 Before running Timeout callback:: count: 3
 10: /home/src/projects/project/packages/package2/tsconfig.json
@@ -1223,11 +1223,11 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /ho
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/packages/package2/tsconfig.json projectStateVersion: 3 projectProgramVersion: 2 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/packages/package2/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
-	/a/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
+	/home/src/tslibs/ts/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/packages/package2/src/index.ts SVC-1-0 "import { FooType, BarType } from \"package1\"\ntype MyFooType = FooType;\ntype MyBarType = BarType;\n"
 
 
-	../../../../../../a/lib/lib.es2016.full.d.ts
+	../../../../tslibs/ts/lib/lib.es2016.full.d.ts
 	  Default library for target 'es2016'
 	src/index.ts
 	  Matched by default include pattern '**/*'
@@ -1265,8 +1265,6 @@ Info seq  [hh:mm:ss:mss] event:
 After running Timeout callback:: count: 0
 
 PolledWatches::
-/a/lib/lib.es2016.full.d.ts:
-  {"event":{"id":3,"path":"/a/lib/lib.es2016.full.d.ts"}}
 /home/src/projects/project/packages/package1/dist/index.d.ts:
   {"event":{"id":16,"path":"/home/src/projects/project/packages/package1/dist/index.d.ts"}}
 /home/src/projects/project/packages/package1/package.json:
@@ -1275,6 +1273,8 @@ PolledWatches::
   {"event":{"id":15,"path":"/home/src/projects/project/packages/package2/package.json"}}
 /home/src/projects/project/packages/package2/tsconfig.json:
   {"event":{"id":1,"path":"/home/src/projects/project/packages/package2/tsconfig.json"}}
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts:
+  {"event":{"id":3,"path":"/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"}}
 
 FsWatchesRecursive::
 /home/src/projects/node_modules: *new*
@@ -1462,14 +1462,14 @@ Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/p
 Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/project/node_modules/package1","recursive":true,"ignoreUpdate":true}:: /home/src/projects/project/node_modules/package1/tsconfig.tsbuildinfo updated
 Custom watchDirectory:: Triggered Ignored:: {"id":8,"path":"/home/src/projects/project/node_modules/package1","recursive":true,"ignoreUpdate":true}:: /home/src/projects/project/node_modules/package1/tsconfig.tsbuildinfo.readable.baseline.txt updated
 Before request
-//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo] file written with same contents Inode:: 24
-//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents Inode:: 25
-//// [/home/src/projects/project/packages/package1/dist/index.js] Inode:: 27
+//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo] file written with same contents Inode:: 25
+//// [/home/src/projects/project/packages/package1/tsconfig.tsbuildinfo.readable.baseline.txt] file written with same contents Inode:: 26
+//// [/home/src/projects/project/packages/package1/dist/index.js] Inode:: 28
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
 
-//// [/home/src/projects/project/packages/package1/dist/index.d.ts] Inode:: 28
+//// [/home/src/projects/project/packages/package1/dist/index.d.ts] Inode:: 29
 export type FooType = "foo";
 export type BarType = "bar";
 
@@ -1514,10 +1514,6 @@ Timeout callback:: count: 1
 18: /home/src/projects/project/packages/package2/tsconfig.jsonFailedLookupInvalidation *new*
 
 ScriptInfos::
-/a/lib/lib.es2016.full.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/packages/package2/tsconfig.json
 /home/src/projects/project/packages/package1/dist/index.d.ts *changed*
     version: Text-1
     pendingReloadFromDisk: true
@@ -1527,6 +1523,10 @@ ScriptInfos::
     version: SVC-1-0
     containingProjects: 1
         /home/src/projects/project/packages/package2/tsconfig.json *default*
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/packages/package2/tsconfig.json
 
 Before running Timeout callback:: count: 1
 18: /home/src/projects/project/packages/package2/tsconfig.jsonFailedLookupInvalidation
@@ -1589,12 +1589,12 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /ho
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/packages/package2/tsconfig.json projectStateVersion: 4 projectProgramVersion: 3 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/packages/package2/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (3)
-	/a/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
+	/home/src/tslibs/ts/lib/lib.es2016.full.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/packages/package1/dist/index.d.ts Text-1 "export type FooType = \"foo\";\nexport type BarType = \"bar\";\n"
 	/home/src/projects/project/packages/package2/src/index.ts SVC-1-0 "import { FooType, BarType } from \"package1\"\ntype MyFooType = FooType;\ntype MyBarType = BarType;\n"
 
 
-	../../../../../../a/lib/lib.es2016.full.d.ts
+	../../../../tslibs/ts/lib/lib.es2016.full.d.ts
 	  Default library for target 'es2016'
 	../package1/dist/index.d.ts
 	  Imported via "package1" from file 'src/index.ts' with packageId 'package1/dist/index.d.ts@1.0.0'
@@ -1634,8 +1634,6 @@ Info seq  [hh:mm:ss:mss] event:
 After running Timeout callback:: count: 0
 
 PolledWatches::
-/a/lib/lib.es2016.full.d.ts:
-  {"event":{"id":3,"path":"/a/lib/lib.es2016.full.d.ts"}}
 /home/src/projects/project/packages/package1/dist/index.d.ts:
   {"event":{"id":16,"path":"/home/src/projects/project/packages/package1/dist/index.d.ts"}}
 /home/src/projects/project/packages/package1/package.json:
@@ -1644,6 +1642,8 @@ PolledWatches::
   {"event":{"id":15,"path":"/home/src/projects/project/packages/package2/package.json"}}
 /home/src/projects/project/packages/package2/tsconfig.json:
   {"event":{"id":1,"path":"/home/src/projects/project/packages/package2/tsconfig.json"}}
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts:
+  {"event":{"id":3,"path":"/home/src/tslibs/ts/lib/lib.es2016.full.d.ts"}}
 
 FsWatchesRecursive::
 /home/src/projects/node_modules/@types:
@@ -1678,10 +1678,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.es2016.full.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/packages/package2/tsconfig.json
 /home/src/projects/project/packages/package1/dist/index.d.ts *changed*
     version: Text-1
     pendingReloadFromDisk: false *changed*
@@ -1691,6 +1687,10 @@ ScriptInfos::
     version: SVC-1-0
     containingProjects: 1
         /home/src/projects/project/packages/package2/tsconfig.json *default*
+/home/src/tslibs/ts/lib/lib.es2016.full.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/packages/package2/tsconfig.json
 
 Before running Timeout callback:: count: 0
 

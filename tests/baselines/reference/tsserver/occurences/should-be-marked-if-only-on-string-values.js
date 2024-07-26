@@ -1,7 +1,7 @@
-currentDirectory:: / useCaseSensitiveFileNames: false
+currentDirectory:: /home/src/vscode/projects/bin useCaseSensitiveFileNames: false
 Info seq  [hh:mm:ss:mss] Provided types map file "/typesMap.json" doesn't exist
 Before request
-//// [/a/b/file1.ts]
+//// [/home/src/projects/project/a/b/file1.ts]
 let t1 = "div";
 let t2 = "div";
 let t3 = { "div": 123 };
@@ -12,18 +12,32 @@ Info seq  [hh:mm:ss:mss] request:
     {
       "command": "open",
       "arguments": {
-        "file": "/a/b/file1.ts"
+        "file": "/home/src/projects/project/a/b/file1.ts"
       },
       "seq": 1,
       "type": "request"
     }
-Info seq  [hh:mm:ss:mss] getConfigFileNameForFile:: File: /a/b/file1.ts ProjectRootPath: undefined:: Result: undefined
+Info seq  [hh:mm:ss:mss] getConfigFileNameForFile:: File: /home/src/projects/project/a/b/file1.ts ProjectRootPath: undefined:: Result: undefined
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/a/b/tsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/a/b/jsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/a/tsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/a/jsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/tsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/jsconfig.json 2000 undefined WatchType: Config file for the inferred project root
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined Project: /dev/null/inferredProject1* WatchType: Missing file
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 500 undefined Project: /dev/null/inferredProject1* WatchType: Missing file
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/a/b/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/a/b/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/a/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/a/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (1)
-	/a/b/file1.ts SVC-1-0 "let t1 = \"div\";\nlet t2 = \"div\";\nlet t3 = { \"div\": 123 };\nlet t4 = t3[\"div\"];"
+	/home/src/projects/project/a/b/file1.ts SVC-1-0 "let t1 = \"div\";\nlet t2 = \"div\";\nlet t3 = { \"div\": 123 };\nlet t4 = t3[\"div\"];"
 
 
 	file1.ts
@@ -35,7 +49,7 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] Open files: 
-Info seq  [hh:mm:ss:mss] 	FileName: /a/b/file1.ts ProjectRootPath: undefined
+Info seq  [hh:mm:ss:mss] 	FileName: /home/src/projects/project/a/b/file1.ts ProjectRootPath: undefined
 Info seq  [hh:mm:ss:mss] 		Projects: /dev/null/inferredProject1*
 Info seq  [hh:mm:ss:mss] response:
     {
@@ -51,7 +65,27 @@ Info seq  [hh:mm:ss:mss] response:
 After request
 
 PolledWatches::
-/a/lib/lib.d.ts: *new*
+/home/src/projects/node_modules/@types: *new*
+  {"pollingInterval":500}
+/home/src/projects/project/a/b/jsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/projects/project/a/b/node_modules/@types: *new*
+  {"pollingInterval":500}
+/home/src/projects/project/a/b/tsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/projects/project/a/jsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/projects/project/a/node_modules/@types: *new*
+  {"pollingInterval":500}
+/home/src/projects/project/a/tsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/projects/project/jsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/projects/project/node_modules/@types: *new*
+  {"pollingInterval":500}
+/home/src/projects/project/tsconfig.json: *new*
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
   {"pollingInterval":500}
 
 Projects::
@@ -60,7 +94,7 @@ Projects::
     projectProgramVersion: 1
 
 ScriptInfos::
-/a/b/file1.ts (Open) *new*
+/home/src/projects/project/a/b/file1.ts (Open) *new*
     version: SVC-1-0
     containingProjects: 1
         /dev/null/inferredProject1* *default*
@@ -71,11 +105,11 @@ Info seq  [hh:mm:ss:mss] request:
     {
       "command": "documentHighlights",
       "arguments": {
-        "file": "/a/b/file1.ts",
+        "file": "/home/src/projects/project/a/b/file1.ts",
         "line": 1,
         "offset": 11,
         "filesToSearch": [
-          "/a/b/file1.ts"
+          "/home/src/projects/project/a/b/file1.ts"
         ]
       },
       "seq": 2,
@@ -85,7 +119,7 @@ Info seq  [hh:mm:ss:mss] response:
     {
       "response": [
         {
-          "file": "/a/b/file1.ts",
+          "file": "/home/src/projects/project/a/b/file1.ts",
           "highlightSpans": [
             {
               "start": {
@@ -152,11 +186,11 @@ Info seq  [hh:mm:ss:mss] request:
     {
       "command": "documentHighlights",
       "arguments": {
-        "file": "/a/b/file1.ts",
+        "file": "/home/src/projects/project/a/b/file1.ts",
         "line": 3,
         "offset": 13,
         "filesToSearch": [
-          "/a/b/file1.ts"
+          "/home/src/projects/project/a/b/file1.ts"
         ]
       },
       "seq": 3,
@@ -166,7 +200,7 @@ Info seq  [hh:mm:ss:mss] response:
     {
       "response": [
         {
-          "file": "/a/b/file1.ts",
+          "file": "/home/src/projects/project/a/b/file1.ts",
           "highlightSpans": [
             {
               "start": {
@@ -211,11 +245,11 @@ Info seq  [hh:mm:ss:mss] request:
     {
       "command": "documentHighlights",
       "arguments": {
-        "file": "/a/b/file1.ts",
+        "file": "/home/src/projects/project/a/b/file1.ts",
         "line": 4,
         "offset": 14,
         "filesToSearch": [
-          "/a/b/file1.ts"
+          "/home/src/projects/project/a/b/file1.ts"
         ]
       },
       "seq": 4,
@@ -225,7 +259,7 @@ Info seq  [hh:mm:ss:mss] response:
     {
       "response": [
         {
-          "file": "/a/b/file1.ts",
+          "file": "/home/src/projects/project/a/b/file1.ts",
           "highlightSpans": [
             {
               "start": {

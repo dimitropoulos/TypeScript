@@ -1,4 +1,4 @@
-currentDirectory:: / useCaseSensitiveFileNames: false
+currentDirectory:: /home/src/vscode/projects/bin useCaseSensitiveFileNames: false
 Info seq  [hh:mm:ss:mss] Provided types map file "/typesMap.json" doesn't exist
 Before request
 //// [/user/username/projects/project/app.js]
@@ -43,7 +43,7 @@ Before request
   }
 }
 
-//// [/a/lib/lib.d.ts]
+//// [/home/src/tslibs/ts/lib/lib.d.ts]
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -55,6 +55,8 @@ interface Object {}
 interface RegExp {}
 interface String { charAt: any; }
 interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
 
 
 Info seq  [hh:mm:ss:mss] request:
@@ -91,7 +93,7 @@ Info seq  [hh:mm:ss:mss] Config: /user/username/projects/project/tsconfig.json :
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project 1 undefined Config: /user/username/projects/project/tsconfig.json WatchType: Wild card directory
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project 1 undefined Config: /user/username/projects/project/tsconfig.json WatchType: Wild card directory
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /user/username/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined WatchType: Closed Script info
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules/@types 1 undefined Project: /user/username/projects/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules/@types 1 undefined Project: /user/username/projects/project/tsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/node_modules/@types 1 undefined Project: /user/username/projects/project/tsconfig.json WatchType: Type roots
@@ -99,11 +101,11 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /us
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project/app.js SVC-1-0 ""
 
 
-	../../../../a/lib/lib.d.ts
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
@@ -118,7 +120,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts: *new*
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
   {}
 /user/username/projects/project/tsconfig.json: *new*
   {}
@@ -133,7 +135,7 @@ Projects::
     projectProgramVersion: 0
 
 ScriptInfos::
-/a/lib/lib.d.ts *new*
+/home/src/tslibs/ts/lib/lib.d.ts *new*
     version: Text-1
     containingProjects: 1
         /user/username/projects/project/tsconfig.json
@@ -142,20 +144,20 @@ ScriptInfos::
     containingProjects: 1
         /user/username/projects/project/tsconfig.json *default*
 
-TI:: [hh:mm:ss:mss] Global cache location '/a/data', safe file path '/safeList.json', types map path /typesMap.json
-TI:: [hh:mm:ss:mss] Processing cache location '/a/data'
-TI:: [hh:mm:ss:mss] Trying to find '/a/data/package.json'...
-TI:: [hh:mm:ss:mss] Finished processing cache location '/a/data'
-TI:: [hh:mm:ss:mss] Npm config file: /a/data/package.json
-TI:: [hh:mm:ss:mss] Npm config file: '/a/data/package.json' is missing, creating new one...
+TI:: [hh:mm:ss:mss] Global cache location '/home/src/typinginstaller/globalcache/data', safe file path '/safeList.json', types map path /typesMap.json
+TI:: [hh:mm:ss:mss] Processing cache location '/home/src/typinginstaller/globalcache/data'
+TI:: [hh:mm:ss:mss] Trying to find '/home/src/typinginstaller/globalcache/data/package.json'...
+TI:: [hh:mm:ss:mss] Finished processing cache location '/home/src/typinginstaller/globalcache/data'
+TI:: [hh:mm:ss:mss] Npm config file: /home/src/typinginstaller/globalcache/data/package.json
+TI:: [hh:mm:ss:mss] Npm config file: '/home/src/typinginstaller/globalcache/data/package.json' is missing, creating new one...
 TI:: [hh:mm:ss:mss] Updating types-registry npm package...
 TI:: [hh:mm:ss:mss] npm install --ignore-scripts types-registry@latest
 TI:: [hh:mm:ss:mss] Updated types-registry npm package
 TI:: typing installer creation complete
-//// [/a/data/package.json]
+//// [/home/src/typinginstaller/globalcache/data/package.json]
 { "private": true }
 
-//// [/a/data/node_modules/types-registry/index.json]
+//// [/home/src/typinginstaller/globalcache/data/node_modules/types-registry/index.json]
 {
   "entries": {
     "jquery": {
@@ -188,7 +190,7 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project/tsconfig.json",
       "fileNames": [
-        "/a/lib/lib.d.ts",
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project/app.js"
       ],
       "compilerOptions": {
@@ -237,7 +239,7 @@ Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /user/username/project
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules 1 undefined Project: /user/username/projects/project/tsconfig.json WatchType: Directory location for typing installer
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules 1 undefined Project: /user/username/projects/project/tsconfig.json WatchType: Directory location for typing installer
 TI:: [hh:mm:ss:mss] Installing typings ["jquery"]
-TI:: [hh:mm:ss:mss] Npm config file: /a/data/package.json
+TI:: [hh:mm:ss:mss] Npm config file: /home/src/typinginstaller/globalcache/data/package.json
 TI:: [hh:mm:ss:mss] Sending response:
     {
       "kind": "event::beginInstallTypes",
@@ -254,7 +256,7 @@ Info seq  [hh:mm:ss:mss] event:
         "eventId": 1
       }
     }
-TI:: [hh:mm:ss:mss] #1 with cwd: /a/data arguments: [
+TI:: [hh:mm:ss:mss] #1 with cwd: /home/src/typinginstaller/globalcache/data arguments: [
   "@types/jquery@tsFakeMajor.Minor"
 ]
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /user/username/projects/project/package.json 250 undefined WatchType: package.json file
@@ -286,7 +288,7 @@ Info seq  [hh:mm:ss:mss] event:
             "tsx": 0,
             "tsxSize": 0,
             "dts": 1,
-            "dtsSize": 334,
+            "dtsSize": 413,
             "deferred": 0,
             "deferredSize": 0
           },
@@ -358,7 +360,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 /user/username/projects/project/package.json: *new*
   {}
@@ -387,12 +389,12 @@ Before running PendingInstalls callback:: count: 1
 TI:: Installation #1 with arguments:: [
   "@types/jquery@tsFakeMajor.Minor"
 ] complete with success::true
-//// [/a/data/node_modules/@types/jquery/index.d.ts]
+//// [/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts]
 declare const $: { x: number }
 
 
 TI:: [hh:mm:ss:mss] Installed typings ["@types/jquery@tsFakeMajor.Minor"]
-TI:: [hh:mm:ss:mss] Installed typing files ["/a/data/node_modules/@types/jquery/index.d.ts"]
+TI:: [hh:mm:ss:mss] Installed typing files ["/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"]
 TI:: [hh:mm:ss:mss] Sending response:
     {
       "projectName": "/user/username/projects/project/tsconfig.json",
@@ -407,7 +409,7 @@ TI:: [hh:mm:ss:mss] Sending response:
         "allowNonTsExtensions": true
       },
       "typings": [
-        "/a/data/node_modules/@types/jquery/index.d.ts"
+        "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
       ],
       "unresolvedImports": [],
       "kind": "action::set"
@@ -432,7 +434,7 @@ Info seq  [hh:mm:ss:mss] event:
           "allowNonTsExtensions": true
         },
         "typings": [
-          "/a/data/node_modules/@types/jquery/index.d.ts"
+          "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
         ],
         "unresolvedImports": [],
         "kind": "action::set"
@@ -483,16 +485,16 @@ Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /user/username/pro
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project/tsconfig.json projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (3)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project/app.js SVC-1-0 ""
-	/a/data/node_modules/@types/jquery/index.d.ts Text-1 "declare const $: { x: number }"
+	/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts Text-1 "declare const $: { x: number }"
 
 
-	../../../../a/lib/lib.d.ts
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
-	../../../../a/data/node_modules/@types/jquery/index.d.ts
+	../../../../home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
@@ -500,9 +502,9 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project/tsconfig.json",
       "fileNames": [
-        "/a/lib/lib.d.ts",
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project/app.js",
-        "/a/data/node_modules/@types/jquery/index.d.ts"
+        "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
       ],
       "compilerOptions": {
         "allowJs": true,
@@ -524,7 +526,7 @@ TI:: [hh:mm:ss:mss] Inferred typings from unresolved imports: []
 TI:: [hh:mm:ss:mss] Finished typings discovery:
     {
       "cachedTypingPaths": [
-        "/a/data/node_modules/@types/jquery/index.d.ts"
+        "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
       ],
       "newTypingNames": [],
       "filesToWatch": [
@@ -552,7 +554,7 @@ TI:: [hh:mm:ss:mss] Sending response:
         "allowNonTsExtensions": true
       },
       "typings": [
-        "/a/data/node_modules/@types/jquery/index.d.ts"
+        "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
       ],
       "unresolvedImports": [],
       "kind": "action::set"
@@ -575,7 +577,7 @@ Info seq  [hh:mm:ss:mss] event:
           "allowNonTsExtensions": true
         },
         "typings": [
-          "/a/data/node_modules/@types/jquery/index.d.ts"
+          "/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts"
         ],
         "unresolvedImports": [],
         "kind": "action::set"
@@ -620,11 +622,11 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/data/node_modules/@types/jquery/index.d.ts *new*
+/home/src/tslibs/ts/lib/lib.d.ts
     version: Text-1
     containingProjects: 1
         /user/username/projects/project/tsconfig.json
-/a/lib/lib.d.ts
+/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts *new*
     version: Text-1
     containingProjects: 1
         /user/username/projects/project/tsconfig.json
@@ -671,7 +673,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 /user/username/projects/project/app.js: *new*
   {}
@@ -691,11 +693,11 @@ Projects::
     noOpenRef: true *changed*
 
 ScriptInfos::
-/a/data/node_modules/@types/jquery/index.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
     version: Text-1
     containingProjects: 1
         /user/username/projects/project/tsconfig.json
-/a/lib/lib.d.ts
+/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts
     version: Text-1
     containingProjects: 1
         /user/username/projects/project/tsconfig.json
@@ -748,11 +750,11 @@ Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /us
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project2/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project2/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (2)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project2/app.js SVC-1-0 ""
 
 
-	../../../../a/lib/lib.d.ts
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
@@ -762,7 +764,7 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project2/tsconfig.json",
       "fileNames": [
-        "/a/lib/lib.d.ts",
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project2/app.js"
       ],
       "compilerOptions": {
@@ -810,7 +812,7 @@ Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /user/username/project
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project2/node_modules 1 undefined Project: /user/username/projects/project2/tsconfig.json WatchType: Directory location for typing installer
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project2/node_modules 1 undefined Project: /user/username/projects/project2/tsconfig.json WatchType: Directory location for typing installer
 TI:: [hh:mm:ss:mss] Installing typings ["commander"]
-TI:: [hh:mm:ss:mss] Npm config file: /a/data/package.json
+TI:: [hh:mm:ss:mss] Npm config file: /home/src/typinginstaller/globalcache/data/package.json
 TI:: [hh:mm:ss:mss] Sending response:
     {
       "kind": "event::beginInstallTypes",
@@ -827,7 +829,7 @@ Info seq  [hh:mm:ss:mss] event:
         "eventId": 2
       }
     }
-TI:: [hh:mm:ss:mss] #2 with cwd: /a/data arguments: [
+TI:: [hh:mm:ss:mss] #2 with cwd: /home/src/typinginstaller/globalcache/data arguments: [
   "@types/commander@tsFakeMajor.Minor"
 ]
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /user/username/projects/project2/package.json 250 undefined WatchType: package.json file
@@ -859,7 +861,7 @@ Info seq  [hh:mm:ss:mss] event:
             "tsx": 0,
             "tsxSize": 0,
             "dts": 1,
-            "dtsSize": 334,
+            "dtsSize": 413,
             "deferred": 0,
             "deferredSize": 0
           },
@@ -903,16 +905,16 @@ Info seq  [hh:mm:ss:mss] event:
 Info seq  [hh:mm:ss:mss] `remove Project::
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (3)
-	/a/lib/lib.d.ts
+	/home/src/tslibs/ts/lib/lib.d.ts
 	/user/username/projects/project/app.js
-	/a/data/node_modules/@types/jquery/index.d.ts
+	/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts
 
 
-	../../../../a/lib/lib.d.ts
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
-	../../../../a/data/node_modules/@types/jquery/index.d.ts
+	../../../../home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
@@ -977,7 +979,7 @@ PolledWatches *deleted*::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 /user/username/projects/project2/package.json: *new*
   {}
@@ -1016,14 +1018,14 @@ Projects::
     projectProgramVersion: 1
 
 ScriptInfos::
-/a/data/node_modules/@types/jquery/index.d.ts *deleted*
-    version: Text-1
-    containingProjects: 0 *changed*
-        /user/username/projects/project/tsconfig.json *deleted*
-/a/lib/lib.d.ts *changed*
+/home/src/tslibs/ts/lib/lib.d.ts *changed*
     version: Text-1
     containingProjects: 1 *changed*
         /user/username/projects/project2/tsconfig.json *new*
+        /user/username/projects/project/tsconfig.json *deleted*
+/home/src/typinginstaller/globalcache/data/node_modules/@types/jquery/index.d.ts *deleted*
+    version: Text-1
+    containingProjects: 0 *changed*
         /user/username/projects/project/tsconfig.json *deleted*
 /user/username/projects/project/app.js *deleted*
     version: SVC-1-0

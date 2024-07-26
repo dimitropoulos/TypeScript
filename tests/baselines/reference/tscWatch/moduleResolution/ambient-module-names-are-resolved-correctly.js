@@ -45,7 +45,7 @@ promisify();
 promisify2();
 
 
-//// [/a/lib/lib.d.ts]
+//// [/home/src/tslibs/ts/lib/lib.d.ts]
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -57,9 +57,11 @@ interface Object {}
 interface RegExp {}
 interface String { charAt: any; }
 interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
 
 
-/a/lib/tsc.js -w --extendedDiagnostics --explainFiles
+/home/src/tslibs/ts/lib/tsc.js -w --extendedDiagnostics --explainFiles
 Output::
 [[90mHH:MM:SS AM[0m] Starting compilation in watch mode...
 
@@ -130,7 +132,7 @@ Directory '/home/src/project/withb/node_modules/@types' does not exist, skipping
 Resolution for module 'mymoduleutils' was found in cache from location '/home/src/project'.
 ======== Module name 'mymoduleutils' was not resolved. ========
 FileWatcher:: Added:: WatchInfo: /home/src/project/withb/node_modules/mymodule/index.d.ts 250 undefined Source file
-FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
+FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 250 undefined Source file
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/witha 1 undefined Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules 1 undefined Failed Lookup Locations
@@ -139,7 +141,7 @@ DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/withb 1 undefined Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/project/node_modules/@types 1 undefined Type roots
-../../../a/lib/lib.d.ts
+../tslibs/ts/lib/lib.d.ts
   Default library for target 'es5'
 witha/node_modules/mymodule/index.d.ts
   Imported via 'mymodule' from file 'witha/a.ts'
@@ -163,8 +165,6 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts: *new*
-  {}
 /home/src/project/tsconfig.json: *new*
   {}
 /home/src/project/witha/a.ts: *new*
@@ -174,6 +174,8 @@ FsWatches::
 /home/src/project/withb/b.ts: *new*
   {}
 /home/src/project/withb/node_modules/mymodule/index.d.ts: *new*
+  {}
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
   {}
 
 FsWatchesRecursive::
@@ -198,21 +200,21 @@ Program options: {
 }
 Program structureReused: Not
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/src/project/witha/node_modules/mymodule/index.d.ts
 /home/src/project/witha/a.ts
 /home/src/project/withb/node_modules/mymodule/index.d.ts
 /home/src/project/withb/b.ts
 
 Semantic diagnostics in builder refreshed for::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/src/project/witha/node_modules/mymodule/index.d.ts
 /home/src/project/witha/a.ts
 /home/src/project/withb/node_modules/mymodule/index.d.ts
 /home/src/project/withb/b.ts
 
 Shape signatures in builder refreshed for::
-/a/lib/lib.d.ts (used version)
+/home/src/tslibs/ts/lib/lib.d.ts (used version)
 /home/src/project/witha/node_modules/mymodule/index.d.ts (used version)
 /home/src/project/witha/a.ts (used version)
 /home/src/project/withb/node_modules/mymodule/index.d.ts (used version)
@@ -362,7 +364,7 @@ File '/home/src/project/withb/node_modules/mymoduleutils/index.d.ts' exists - us
 Resolving real path for '/home/src/project/withb/node_modules/mymoduleutils/index.d.ts', result '/home/src/project/withb/node_modules/mymoduleutils/index.d.ts'.
 ======== Module name 'mymoduleutils' was successfully resolved to '/home/src/project/withb/node_modules/mymoduleutils/index.d.ts'. ========
 FileWatcher:: Added:: WatchInfo: /home/src/project/withb/node_modules/mymoduleutils/index.d.ts 250 undefined Source file
-../../../a/lib/lib.d.ts
+../tslibs/ts/lib/lib.d.ts
   Default library for target 'es5'
 witha/node_modules/mymodule/index.d.ts
   Imported via 'mymodule' from file 'witha/a.ts'
@@ -384,8 +386,6 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
-  {}
 /home/src/project/tsconfig.json:
   {}
 /home/src/project/witha/a.ts:
@@ -395,6 +395,8 @@ FsWatches::
 /home/src/project/withb/b.ts:
   {}
 /home/src/project/withb/node_modules/mymoduleutils/index.d.ts: *new*
+  {}
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 
 FsWatches *deleted*::
@@ -424,21 +426,21 @@ Program options: {
 }
 Program structureReused: Not
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/src/project/witha/node_modules/mymodule/index.d.ts
 /home/src/project/witha/a.ts
 /home/src/project/withb/node_modules/mymoduleutils/index.d.ts
 /home/src/project/withb/b.ts
 
 Semantic diagnostics in builder refreshed for::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/src/project/witha/node_modules/mymodule/index.d.ts
 /home/src/project/witha/a.ts
 /home/src/project/withb/node_modules/mymoduleutils/index.d.ts
 /home/src/project/withb/b.ts
 
 Shape signatures in builder refreshed for::
-/a/lib/lib.d.ts (used version)
+/home/src/tslibs/ts/lib/lib.d.ts (used version)
 /home/src/project/witha/node_modules/mymodule/index.d.ts (used version)
 /home/src/project/witha/a.ts (computed .d.ts)
 /home/src/project/withb/node_modules/mymoduleutils/index.d.ts (used version)

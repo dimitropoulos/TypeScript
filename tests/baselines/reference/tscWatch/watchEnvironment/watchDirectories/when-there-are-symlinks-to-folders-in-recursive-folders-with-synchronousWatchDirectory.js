@@ -1,6 +1,6 @@
 currentDirectory:: /home/user/projects/myproject useCaseSensitiveFileNames: false
 Input::
-//// [/a/lib/lib.d.ts] Inode:: 3
+//// [/home/src/tslibs/ts/lib/lib.d.ts] Inode:: 6
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -12,11 +12,13 @@ interface Object {}
 interface RegExp {}
 interface String { charAt: any; }
 interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
 
-//// [/home/user/projects/myproject/src/file.ts] Inode:: 9
+//// [/home/user/projects/myproject/src/file.ts] Inode:: 11
 import * as a from "a"
 
-//// [/home/user/projects/myproject/tsconfig.json] Inode:: 10
+//// [/home/user/projects/myproject/tsconfig.json] Inode:: 12
 {
   "compilerOptions": {
     "extendedDiagnostics": true,
@@ -27,18 +29,18 @@ import * as a from "a"
   }
 }
 
-//// [/home/user/projects/myproject/node_modules/reala/index.d.ts] Inode:: 13
+//// [/home/user/projects/myproject/node_modules/reala/index.d.ts] Inode:: 15
 export {}
 
-//// [/home/user/projects/myproject/node_modules/realb/index.d.ts] Inode:: 15
+//// [/home/user/projects/myproject/node_modules/realb/index.d.ts] Inode:: 17
 export {}
 
-//// [/home/user/projects/myproject/node_modules/a] symlink(/home/user/projects/myproject/node_modules/reala) Inode:: 16
-//// [/home/user/projects/myproject/node_modules/b] symlink(/home/user/projects/myproject/node_modules/realb) Inode:: 17
-//// [/home/user/projects/myproject/node_modules/reala/node_modules/b] symlink(/home/user/projects/myproject/node_modules/b) Inode:: 19
-//// [/home/user/projects/myproject/node_modules/realb/node_modules/a] symlink(/home/user/projects/myproject/node_modules/a) Inode:: 21
+//// [/home/user/projects/myproject/node_modules/a] symlink(/home/user/projects/myproject/node_modules/reala) Inode:: 18
+//// [/home/user/projects/myproject/node_modules/b] symlink(/home/user/projects/myproject/node_modules/realb) Inode:: 19
+//// [/home/user/projects/myproject/node_modules/reala/node_modules/b] symlink(/home/user/projects/myproject/node_modules/b) Inode:: 21
+//// [/home/user/projects/myproject/node_modules/realb/node_modules/a] symlink(/home/user/projects/myproject/node_modules/a) Inode:: 23
 
-/a/lib/tsc.js --w
+/home/src/tslibs/ts/lib/tsc.js --w
 Output::
 [[90mHH:MM:SS AM[0m] Starting compilation in watch mode...
 
@@ -64,7 +66,7 @@ File '/home/user/projects/myproject/node_modules/a/index.d.ts' exists - use it a
 Resolving real path for '/home/user/projects/myproject/node_modules/a/index.d.ts', result '/home/user/projects/myproject/node_modules/reala/index.d.ts'.
 ======== Module name 'a' was successfully resolved to '/home/user/projects/myproject/node_modules/reala/index.d.ts'. ========
 FileWatcher:: Added:: WatchInfo: /home/user/projects/myproject/node_modules/reala/index.d.ts 250 {"synchronousWatchDirectory":true} Source file
-FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 {"synchronousWatchDirectory":true} Source file
+FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 250 {"synchronousWatchDirectory":true} Source file
 DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/myproject/src 1 {"synchronousWatchDirectory":true} Failed Lookup Locations
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/myproject/src 1 {"synchronousWatchDirectory":true} Failed Lookup Locations
 DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/myproject/node_modules/a 1 {"synchronousWatchDirectory":true} Failed Lookup Locations
@@ -83,7 +85,7 @@ DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/myproject 1 {"synchron
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/myproject 1 {"synchronousWatchDirectory":true} Wild card directory
 
 
-//// [/home/user/projects/myproject/src/file.js] Inode:: 22
+//// [/home/user/projects/myproject/src/file.js] Inode:: 24
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
@@ -96,30 +98,30 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts: *new*
-  {"inode":3}
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
+  {"inode":6}
 /home/user/projects/myproject: *new*
-  {"inode":7}
-/home/user/projects/myproject/node_modules: *new*
-  {"inode":11}
-/home/user/projects/myproject/node_modules/a: *new*
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala: *new*
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala/index.d.ts: *new*
-  {"inode":13}
-/home/user/projects/myproject/node_modules/reala/node_modules: *new*
-  {"inode":18}
-/home/user/projects/myproject/node_modules/realb: *new*
-  {"inode":14}
-/home/user/projects/myproject/node_modules/realb/node_modules: *new*
-  {"inode":20}
-/home/user/projects/myproject/src: *new*
-  {"inode":8}
-/home/user/projects/myproject/src/file.ts: *new*
   {"inode":9}
-/home/user/projects/myproject/tsconfig.json: *new*
+/home/user/projects/myproject/node_modules: *new*
+  {"inode":13}
+/home/user/projects/myproject/node_modules/a: *new*
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala: *new*
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala/index.d.ts: *new*
+  {"inode":15}
+/home/user/projects/myproject/node_modules/reala/node_modules: *new*
+  {"inode":20}
+/home/user/projects/myproject/node_modules/realb: *new*
+  {"inode":16}
+/home/user/projects/myproject/node_modules/realb/node_modules: *new*
+  {"inode":22}
+/home/user/projects/myproject/src: *new*
   {"inode":10}
+/home/user/projects/myproject/src/file.ts: *new*
+  {"inode":11}
+/home/user/projects/myproject/tsconfig.json: *new*
+  {"inode":12}
 
 Program root files: [
   "/home/user/projects/myproject/src/file.ts"
@@ -132,17 +134,17 @@ Program options: {
 }
 Program structureReused: Not
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/user/projects/myproject/node_modules/reala/index.d.ts
 /home/user/projects/myproject/src/file.ts
 
 Semantic diagnostics in builder refreshed for::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/user/projects/myproject/node_modules/reala/index.d.ts
 /home/user/projects/myproject/src/file.ts
 
 Shape signatures in builder refreshed for::
-/a/lib/lib.d.ts (used version)
+/home/src/tslibs/ts/lib/lib.d.ts (used version)
 /home/user/projects/myproject/node_modules/reala/index.d.ts (used version)
 /home/user/projects/myproject/src/file.ts (used version)
 
@@ -184,32 +186,32 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
-  {"inode":3}
+/home/src/tslibs/ts/lib/lib.d.ts:
+  {"inode":6}
 /home/user/projects/myproject:
-  {"inode":7}
-/home/user/projects/myproject/node_modules:
-  {"inode":11}
-/home/user/projects/myproject/node_modules/a:
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala:
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala/node_modules:
-  {"inode":18}
-/home/user/projects/myproject/node_modules/realb:
-  {"inode":14}
-/home/user/projects/myproject/node_modules/realb/node_modules:
-  {"inode":20}
-/home/user/projects/myproject/src:
-  {"inode":8}
-/home/user/projects/myproject/src/file.ts:
   {"inode":9}
-/home/user/projects/myproject/tsconfig.json:
+/home/user/projects/myproject/node_modules:
+  {"inode":13}
+/home/user/projects/myproject/node_modules/a:
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala:
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala/node_modules:
+  {"inode":20}
+/home/user/projects/myproject/node_modules/realb:
+  {"inode":16}
+/home/user/projects/myproject/node_modules/realb/node_modules:
+  {"inode":22}
+/home/user/projects/myproject/src:
   {"inode":10}
+/home/user/projects/myproject/src/file.ts:
+  {"inode":11}
+/home/user/projects/myproject/tsconfig.json:
+  {"inode":12}
 
 FsWatches *deleted*::
 /home/user/projects/myproject/node_modules/reala/index.d.ts:
-  {"inode":13}
+  {"inode":15}
 
 Timeout callback:: count: 2
 5: timerToInvalidateFailedLookupResolutions *new*
@@ -271,7 +273,7 @@ Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/user/projects/node_mod
 
 
 
-//// [/home/user/projects/myproject/src/file.js] file written with same contents Inode:: 22
+//// [/home/user/projects/myproject/src/file.js] file written with same contents Inode:: 24
 
 PolledWatches::
 /home/user/projects/myproject/node_modules/@types:
@@ -286,28 +288,28 @@ PolledWatches *deleted*::
   {"pollingInterval":250}
 
 FsWatches::
-/a/lib/lib.d.ts:
-  {"inode":3}
+/home/src/tslibs/ts/lib/lib.d.ts:
+  {"inode":6}
 /home/user/projects/myproject:
-  {"inode":7}
-/home/user/projects/myproject/node_modules:
-  {"inode":11}
-/home/user/projects/myproject/node_modules/a:
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala:
-  {"inode":12}
-/home/user/projects/myproject/node_modules/reala/node_modules:
-  {"inode":18}
-/home/user/projects/myproject/node_modules/realb:
-  {"inode":14}
-/home/user/projects/myproject/node_modules/realb/node_modules:
-  {"inode":20}
-/home/user/projects/myproject/src:
-  {"inode":8}
-/home/user/projects/myproject/src/file.ts:
   {"inode":9}
-/home/user/projects/myproject/tsconfig.json:
+/home/user/projects/myproject/node_modules:
+  {"inode":13}
+/home/user/projects/myproject/node_modules/a:
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala:
+  {"inode":14}
+/home/user/projects/myproject/node_modules/reala/node_modules:
+  {"inode":20}
+/home/user/projects/myproject/node_modules/realb:
+  {"inode":16}
+/home/user/projects/myproject/node_modules/realb/node_modules:
+  {"inode":22}
+/home/user/projects/myproject/src:
   {"inode":10}
+/home/user/projects/myproject/src/file.ts:
+  {"inode":11}
+/home/user/projects/myproject/tsconfig.json:
+  {"inode":12}
 
 
 Program root files: [
@@ -321,7 +323,7 @@ Program options: {
 }
 Program structureReused: Not
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /home/user/projects/myproject/src/file.ts
 
 Semantic diagnostics in builder refreshed for::

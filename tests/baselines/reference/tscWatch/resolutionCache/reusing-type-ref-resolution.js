@@ -27,7 +27,7 @@ export {}
 //// [/users/username/projects/project/node_modules/pkg2/index.d.ts]
 interface Import2 {}
 
-//// [/a/lib/lib.d.ts]
+//// [/home/src/tslibs/ts/lib/lib.d.ts]
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -39,9 +39,11 @@ interface Object {}
 interface RegExp {}
 interface String { charAt: any; }
 interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
 
 
-/a/lib/tsc.js -w --explainFiles --extendedDiagnostics
+/home/src/tslibs/ts/lib/tsc.js -w --explainFiles --extendedDiagnostics
 Output::
 [[90mHH:MM:SS AM[0m] Starting compilation in watch mode...
 
@@ -123,7 +125,7 @@ Directory '/users/node_modules' does not exist, skipping all lookups in it.
 Directory '/node_modules' does not exist, skipping all lookups in it.
 ======== Type reference directive 'pkg3' was not resolved. ========
 FileWatcher:: Added:: WatchInfo: /users/username/projects/project/node_modules/pkg2/index.d.ts 250 undefined Source file
-FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 250 undefined Source file
+FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 250 undefined Source file
 DirectoryWatcher:: Added:: WatchInfo: /users/username/projects/project/node_modules/@types 1 undefined Type roots
 Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /users/username/projects/project/node_modules/@types 1 undefined Type roots
 DirectoryWatcher:: Added:: WatchInfo: /users/username/projects/node_modules/@types 1 undefined Type roots
@@ -143,7 +145,7 @@ Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /users/username/projects/nod
 [7m3[0m interface LocalInterface extends Import2, Import3 {}
 [7m [0m [91m                                          ~~~~~~~[0m
 
-../../../../a/lib/lib.d.ts
+../../../../home/src/tslibs/ts/lib/lib.d.ts
   Default library for target 'es5'
 node_modules/pkg0/index.d.ts
   Imported via "pkg0" from file 'fileWithImports.ts'
@@ -180,12 +182,12 @@ export {};
 
 
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo]
-{"fileNames":["../../../../../a/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2],[4]],"fileInfos":[{"version":"-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }","affectsGlobalScope":true},"-8124756421-export interface Import0 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[3,5],"options":{"composite":true,"outDir":"./"},"referencedMap":[[3,1],[5,2]],"semanticDiagnosticsPerFile":[[3,[{"start":66,"length":6,"messageText":"Cannot find module 'pkg1' or its corresponding type declarations.","category":1,"code":2307}]],[5,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
+{"fileNames":["../../../../../home/src/tslibs/ts/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2],[4]],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","affectsGlobalScope":true},"-8124756421-export interface Import0 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[3,5],"options":{"composite":true,"outDir":"./"},"referencedMap":[[3,1],[5,2]],"semanticDiagnosticsPerFile":[[3,[{"start":66,"length":6,"messageText":"Cannot find module 'pkg1' or its corresponding type declarations.","category":1,"code":2307}]],[5,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
 
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo.readable.baseline.txt]
 {
   "fileNames": [
-    "../../../../../a/lib/lib.d.ts",
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts",
     "../node_modules/pkg0/index.d.ts",
     "../filewithimports.ts",
     "../node_modules/pkg2/index.d.ts",
@@ -200,13 +202,13 @@ export {};
     ]
   ],
   "fileInfos": {
-    "../../../../../a/lib/lib.d.ts": {
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts": {
       "original": {
-        "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+        "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
         "affectsGlobalScope": true
       },
-      "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
-      "signature": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+      "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+      "signature": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
       "affectsGlobalScope": true
     },
     "../node_modules/pkg0/index.d.ts": {
@@ -293,7 +295,7 @@ export {};
   ],
   "latestChangedDtsFile": "./fileWithTypeRefs.d.ts",
   "version": "FakeTSVersion",
-  "size": 1589
+  "size": 1686
 }
 
 
@@ -306,7 +308,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts: *new*
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
   {}
 /users/username/projects/project/fileWithImports.ts: *new*
   {}
@@ -340,21 +342,21 @@ Program options: {
 }
 Program structureReused: Not
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /users/username/projects/project/node_modules/pkg0/index.d.ts
 /users/username/projects/project/fileWithImports.ts
 /users/username/projects/project/node_modules/pkg2/index.d.ts
 /users/username/projects/project/fileWithTypeRefs.ts
 
 Semantic diagnostics in builder refreshed for::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /users/username/projects/project/node_modules/pkg0/index.d.ts
 /users/username/projects/project/fileWithImports.ts
 /users/username/projects/project/node_modules/pkg2/index.d.ts
 /users/username/projects/project/fileWithTypeRefs.ts
 
 Shape signatures in builder refreshed for::
-/a/lib/lib.d.ts (used version)
+/home/src/tslibs/ts/lib/lib.d.ts (used version)
 /users/username/projects/project/node_modules/pkg0/index.d.ts (used version)
 /users/username/projects/project/filewithimports.ts (computed .d.ts during emit)
 /users/username/projects/project/node_modules/pkg2/index.d.ts (used version)
@@ -443,7 +445,7 @@ Reusing resolution of type reference directive 'pkg3' from '/users/username/proj
 [7m3[0m interface LocalInterface extends Import2, Import3 {}
 [7m [0m [91m                                          ~~~~~~~[0m
 
-../../../../a/lib/lib.d.ts
+../../../../home/src/tslibs/ts/lib/lib.d.ts
   Default library for target 'es5'
 node_modules/pkg0/index.d.ts
   Imported via "pkg0" from file 'fileWithImports.ts'
@@ -461,12 +463,12 @@ fileWithTypeRefs.ts
 
 //// [/users/username/projects/project/outDir/fileWithImports.js] file written with same contents
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo]
-{"fileNames":["../../../../../a/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../node_modules/pkg1/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2,3],[5]],"fileInfos":[{"version":"-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }","affectsGlobalScope":true},"-8124756421-export interface Import0 {}","-8124720484-export interface Import1 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[4,6],"options":{"composite":true,"outDir":"./"},"referencedMap":[[4,1],[6,2]],"semanticDiagnosticsPerFile":[[6,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
+{"fileNames":["../../../../../home/src/tslibs/ts/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../node_modules/pkg1/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2,3],[5]],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","affectsGlobalScope":true},"-8124756421-export interface Import0 {}","-8124720484-export interface Import1 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[4,6],"options":{"composite":true,"outDir":"./"},"referencedMap":[[4,1],[6,2]],"semanticDiagnosticsPerFile":[[6,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
 
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo.readable.baseline.txt]
 {
   "fileNames": [
-    "../../../../../a/lib/lib.d.ts",
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts",
     "../node_modules/pkg0/index.d.ts",
     "../node_modules/pkg1/index.d.ts",
     "../filewithimports.ts",
@@ -483,13 +485,13 @@ fileWithTypeRefs.ts
     ]
   ],
   "fileInfos": {
-    "../../../../../a/lib/lib.d.ts": {
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts": {
       "original": {
-        "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+        "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
         "affectsGlobalScope": true
       },
-      "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
-      "signature": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+      "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+      "signature": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
       "affectsGlobalScope": true
     },
     "../node_modules/pkg0/index.d.ts": {
@@ -569,7 +571,7 @@ fileWithTypeRefs.ts
   ],
   "latestChangedDtsFile": "./fileWithTypeRefs.d.ts",
   "version": "FakeTSVersion",
-  "size": 1530
+  "size": 1627
 }
 
 
@@ -582,7 +584,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 /users/username/projects/project/fileWithImports.ts:
   {}
@@ -619,7 +621,7 @@ Program options: {
 }
 Program structureReused: SafeModules
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /users/username/projects/project/node_modules/pkg0/index.d.ts
 /users/username/projects/project/node_modules/pkg1/index.d.ts
 /users/username/projects/project/fileWithImports.ts
@@ -713,7 +715,7 @@ FileWatcher:: Added:: WatchInfo: /users/username/projects/project/node_modules/p
 [7m3[0m interface LocalInterface extends Import2, Import3 {}
 [7m [0m [91m                                          ~~~~~~~[0m
 
-../../../../a/lib/lib.d.ts
+../../../../home/src/tslibs/ts/lib/lib.d.ts
   Default library for target 'es5'
 node_modules/pkg0/index.d.ts
   Imported via "pkg0" from file 'fileWithImports.ts'
@@ -733,12 +735,12 @@ fileWithTypeRefs.ts
 
 //// [/users/username/projects/project/outDir/fileWithTypeRefs.js] file written with same contents
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo]
-{"fileNames":["../../../../../a/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../node_modules/pkg1/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../node_modules/pkg3/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2,3],[5,6]],"fileInfos":[{"version":"-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }","affectsGlobalScope":true},"-8124756421-export interface Import0 {}","-8124720484-export interface Import1 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},"-8124648610-export interface Import3 {}",{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[4,7],"options":{"composite":true,"outDir":"./"},"referencedMap":[[4,1],[7,2]],"semanticDiagnosticsPerFile":[[7,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
+{"fileNames":["../../../../../home/src/tslibs/ts/lib/lib.d.ts","../node_modules/pkg0/index.d.ts","../node_modules/pkg1/index.d.ts","../filewithimports.ts","../node_modules/pkg2/index.d.ts","../node_modules/pkg3/index.d.ts","../filewithtyperefs.ts"],"fileIdsList":[[2,3],[5,6]],"fileInfos":[{"version":"3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };","affectsGlobalScope":true},"-8124756421-export interface Import0 {}","-8124720484-export interface Import1 {}",{"version":"-14287751515-import type { Import0 } from \"pkg0\";\nimport type { Import1 } from \"pkg1\";\n","signature":"-3531856636-export {};\n"},{"version":"-11273315461-interface Import2 {}","affectsGlobalScope":true},"-8124648610-export interface Import3 {}",{"version":"-12735305811-/// <reference types=\"pkg2\"/>\n/// <reference types=\"pkg3\"/>\ninterface LocalInterface extends Import2, Import3 {}\nexport {}\n","signature":"-3531856636-export {};\n"}],"root":[4,7],"options":{"composite":true,"outDir":"./"},"referencedMap":[[4,1],[7,2]],"semanticDiagnosticsPerFile":[[7,[{"start":102,"length":7,"messageText":"Cannot find name 'Import3'. Did you mean 'Import2'?","category":1,"code":2552,"canonicalHead":{"code":2304,"messageText":"Cannot find name 'Import3'."}}]]],"latestChangedDtsFile":"./fileWithTypeRefs.d.ts","version":"FakeTSVersion"}
 
 //// [/users/username/projects/project/outDir/tsconfig.tsbuildinfo.readable.baseline.txt]
 {
   "fileNames": [
-    "../../../../../a/lib/lib.d.ts",
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts",
     "../node_modules/pkg0/index.d.ts",
     "../node_modules/pkg1/index.d.ts",
     "../filewithimports.ts",
@@ -757,13 +759,13 @@ fileWithTypeRefs.ts
     ]
   ],
   "fileInfos": {
-    "../../../../../a/lib/lib.d.ts": {
+    "../../../../../home/src/tslibs/ts/lib/lib.d.ts": {
       "original": {
-        "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+        "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
         "affectsGlobalScope": true
       },
-      "version": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
-      "signature": "-7698705165-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }",
+      "version": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
+      "signature": "3858781397-/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };",
       "affectsGlobalScope": true
     },
     "../node_modules/pkg0/index.d.ts": {
@@ -848,7 +850,7 @@ fileWithTypeRefs.ts
   ],
   "latestChangedDtsFile": "./fileWithTypeRefs.d.ts",
   "version": "FakeTSVersion",
-  "size": 1608
+  "size": 1705
 }
 
 
@@ -861,7 +863,7 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
+/home/src/tslibs/ts/lib/lib.d.ts:
   {}
 /users/username/projects/project/fileWithImports.ts:
   {}
@@ -900,7 +902,7 @@ Program options: {
 }
 Program structureReused: SafeModules
 Program files::
-/a/lib/lib.d.ts
+/home/src/tslibs/ts/lib/lib.d.ts
 /users/username/projects/project/node_modules/pkg0/index.d.ts
 /users/username/projects/project/node_modules/pkg1/index.d.ts
 /users/username/projects/project/fileWithImports.ts

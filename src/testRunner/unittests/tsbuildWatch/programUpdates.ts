@@ -7,8 +7,6 @@ import {
     getSysForSampleProjectReferences,
 } from "../helpers/sampleProjectReferences.js";
 import {
-    commonFile1,
-    commonFile2,
     createBaseline,
     createSolutionBuilderWithWatchHostForBaseline,
     noopChange,
@@ -22,7 +20,7 @@ import {
     libFile,
 } from "../helpers/virtualFileSystemWithWatch.js";
 
-describe("unittests:: tsbuildWatch:: watchMode:: program updates", () => {
+describe("unittests:: tsbuildWatch:: watchMode:: programUpdates::", () => {
     verifyTscWatch({
         scenario: "programUpdates",
         subScenario: "creates solution in watch mode",
@@ -523,12 +521,20 @@ createSomeObject().message;`,
         subScenario: "works with extended source files",
         commandLineArgs: ["-b", "-w", "-v", "project1.tsconfig.json", "project2.tsconfig.json", "project3.tsconfig.json"],
         sys: () => {
+            const commonFile1: File = {
+                path: "/user/username/projects/project/commonFile1.ts",
+                content: "let x = 1",
+            };
+            const commonFile2: File = {
+                path: "/user/username/projects/project/commonFile2.ts",
+                content: "let y = 1",
+            };
             const alphaExtendedConfigFile: File = {
-                path: "/a/b/alpha.tsconfig.json",
+                path: "/user/username/projects/project/alpha.tsconfig.json",
                 content: "{}",
             };
             const project1Config: File = {
-                path: "/a/b/project1.tsconfig.json",
+                path: "/user/username/projects/project/project1.tsconfig.json",
                 content: jsonToReadableText({
                     extends: "./alpha.tsconfig.json",
                     compilerOptions: {
@@ -538,17 +544,17 @@ createSomeObject().message;`,
                 }),
             };
             const bravoExtendedConfigFile: File = {
-                path: "/a/b/bravo.tsconfig.json",
+                path: "/user/username/projects/project/bravo.tsconfig.json",
                 content: jsonToReadableText({
                     extends: "./alpha.tsconfig.json",
                 }),
             };
             const otherFile: File = {
-                path: "/a/b/other.ts",
+                path: "/user/username/projects/project/other.ts",
                 content: "let z = 0;",
             };
             const project2Config: File = {
-                path: "/a/b/project2.tsconfig.json",
+                path: "/user/username/projects/project/project2.tsconfig.json",
                 content: jsonToReadableText({
                     extends: "./bravo.tsconfig.json",
                     compilerOptions: {
@@ -558,11 +564,11 @@ createSomeObject().message;`,
                 }),
             };
             const otherFile2: File = {
-                path: "/a/b/other2.ts",
+                path: "/user/username/projects/project/other2.ts",
                 content: "let k = 0;",
             };
             const extendsConfigFile1: File = {
-                path: "/a/b/extendsConfig1.tsconfig.json",
+                path: "/user/username/projects/project/extendsConfig1.tsconfig.json",
                 content: jsonToReadableText({
                     compilerOptions: {
                         composite: true,
@@ -570,7 +576,7 @@ createSomeObject().message;`,
                 }),
             };
             const extendsConfigFile2: File = {
-                path: "/a/b/extendsConfig2.tsconfig.json",
+                path: "/user/username/projects/project/extendsConfig2.tsconfig.json",
                 content: jsonToReadableText({
                     compilerOptions: {
                         strictNullChecks: false,
@@ -578,7 +584,7 @@ createSomeObject().message;`,
                 }),
             };
             const extendsConfigFile3: File = {
-                path: "/a/b/extendsConfig3.tsconfig.json",
+                path: "/user/username/projects/project/extendsConfig3.tsconfig.json",
                 content: jsonToReadableText({
                     compilerOptions: {
                         noImplicitAny: true,
@@ -586,9 +592,13 @@ createSomeObject().message;`,
                 }),
             };
             const project3Config: File = {
-                path: "/a/b/project3.tsconfig.json",
+                path: "/user/username/projects/project/project3.tsconfig.json",
                 content: jsonToReadableText({
-                    extends: ["./extendsConfig1.tsconfig.json", "./extendsConfig2.tsconfig.json", "./extendsConfig3.tsconfig.json"],
+                    extends: [
+                        "./extendsConfig1.tsconfig.json",
+                        "./extendsConfig2.tsconfig.json",
+                        "./extendsConfig3.tsconfig.json",
+                    ],
                     compilerOptions: {
                         composite: false,
                     },
@@ -609,14 +619,14 @@ createSomeObject().message;`,
                 extendsConfigFile2,
                 extendsConfigFile3,
                 project3Config,
-            ], { currentDirectory: "/a/b" });
+            ], { currentDirectory: "/user/username/projects/project" });
         },
         edits: [
             {
                 caption: "Modify alpha config",
                 edit: sys =>
                     sys.writeFile(
-                        "/a/b/alpha.tsconfig.json",
+                        "/user/username/projects/project/alpha.tsconfig.json",
                         jsonToReadableText({
                             compilerOptions: { strict: true },
                         }),
@@ -632,7 +642,7 @@ createSomeObject().message;`,
                 caption: "change bravo config",
                 edit: sys =>
                     sys.writeFile(
-                        "/a/b/bravo.tsconfig.json",
+                        "/user/username/projects/project/bravo.tsconfig.json",
                         jsonToReadableText({
                             extends: "./alpha.tsconfig.json",
                             compilerOptions: { strict: false },
@@ -644,7 +654,7 @@ createSomeObject().message;`,
                 caption: "project 2 extends alpha",
                 edit: sys =>
                     sys.writeFile(
-                        "/a/b/project2.tsconfig.json",
+                        "/user/username/projects/project/project2.tsconfig.json",
                         jsonToReadableText({
                             extends: "./alpha.tsconfig.json",
                         }),
@@ -653,7 +663,7 @@ createSomeObject().message;`,
             },
             {
                 caption: "update aplha config",
-                edit: sys => sys.writeFile("/a/b/alpha.tsconfig.json", "{}"),
+                edit: sys => sys.writeFile("/user/username/projects/project/alpha.tsconfig.json", "{}"),
                 timeouts: sys => sys.runQueuedTimeoutCallbacks(), // build project1
             },
             {
@@ -665,7 +675,7 @@ createSomeObject().message;`,
                 caption: "Modify extendsConfigFile2",
                 edit: sys =>
                     sys.writeFile(
-                        "/a/b/extendsConfig2.tsconfig.json",
+                        "/user/username/projects/project/extendsConfig2.tsconfig.json",
                         jsonToReadableText({
                             compilerOptions: { strictNullChecks: true },
                         }),
@@ -676,11 +686,11 @@ createSomeObject().message;`,
                 caption: "Modify project 3",
                 edit: sys =>
                     sys.writeFile(
-                        "/a/b/project3.tsconfig.json",
+                        "/user/username/projects/project/project3.tsconfig.json",
                         jsonToReadableText({
                             extends: ["./extendsConfig1.tsconfig.json", "./extendsConfig2.tsconfig.json"],
                             compilerOptions: { composite: false },
-                            files: ["/a/b/other2.ts"],
+                            files: ["/user/username/projects/project/other2.ts"],
                         }),
                     ),
                 timeouts: sys => sys.runQueuedTimeoutCallbacks(), // Build project3
@@ -698,8 +708,16 @@ createSomeObject().message;`,
         subScenario: "works correctly when project with extended config is removed",
         commandLineArgs: ["-b", "-w", "-v"],
         sys: () => {
+            const commonFile1: File = {
+                path: "/user/username/projects/project/commonFile1.ts",
+                content: "let x = 1",
+            };
+            const commonFile2: File = {
+                path: "/user/username/projects/project/commonFile2.ts",
+                content: "let y = 1",
+            };
             const alphaExtendedConfigFile: File = {
-                path: "/a/b/alpha.tsconfig.json",
+                path: "/user/username/projects/project/alpha.tsconfig.json",
                 content: jsonToReadableText({
                     compilerOptions: {
                         strict: true,
@@ -707,7 +725,7 @@ createSomeObject().message;`,
                 }),
             };
             const project1Config: File = {
-                path: "/a/b/project1.tsconfig.json",
+                path: "/user/username/projects/project/project1.tsconfig.json",
                 content: jsonToReadableText({
                     extends: "./alpha.tsconfig.json",
                     compilerOptions: {
@@ -717,7 +735,7 @@ createSomeObject().message;`,
                 }),
             };
             const bravoExtendedConfigFile: File = {
-                path: "/a/b/bravo.tsconfig.json",
+                path: "/user/username/projects/project/bravo.tsconfig.json",
                 content: jsonToReadableText({
                     compilerOptions: {
                         strict: true,
@@ -725,11 +743,11 @@ createSomeObject().message;`,
                 }),
             };
             const otherFile: File = {
-                path: "/a/b/other.ts",
+                path: "/user/username/projects/project/other.ts",
                 content: "let z = 0;",
             };
             const project2Config: File = {
-                path: "/a/b/project2.tsconfig.json",
+                path: "/user/username/projects/project/project2.tsconfig.json",
                 content: jsonToReadableText({
                     extends: "./bravo.tsconfig.json",
                     compilerOptions: {
@@ -739,7 +757,7 @@ createSomeObject().message;`,
                 }),
             };
             const configFile: File = {
-                path: "/a/b/tsconfig.json",
+                path: "/user/username/projects/project/tsconfig.json",
                 content: jsonToReadableText({
                     references: [
                         {
@@ -762,14 +780,14 @@ createSomeObject().message;`,
                 bravoExtendedConfigFile,
                 project2Config,
                 otherFile,
-            ], { currentDirectory: "/a/b" });
+            ], { currentDirectory: "/user/username/projects/project" });
         },
         edits: [
             {
                 caption: "Remove project2 from base config",
                 edit: sys =>
                     sys.modifyFile(
-                        "/a/b/tsconfig.json",
+                        "/user/username/projects/project/tsconfig.json",
                         jsonToReadableText({
                             references: [
                                 {
@@ -789,11 +807,11 @@ createSomeObject().message;`,
         subScenario: "tsbuildinfo has error",
         sys: () =>
             createWatchedSystem({
-                "/src/project/main.ts": "export const x = 10;",
-                "/src/project/tsconfig.json": "{}",
-                "/src/project/tsconfig.tsbuildinfo": "Some random string",
+                "/user/username/projects/project/main.ts": "export const x = 10;",
+                "/user/username/projects/project/tsconfig.json": "{}",
+                "/user/username/projects/project/tsconfig.tsbuildinfo": "Some random string",
                 [libFile.path]: libFile.content,
-            }),
-        commandLineArgs: ["--b", "src/project", "-i", "-w"],
+            }, { currentDirectory: "/user/username/projects/project" }),
+        commandLineArgs: ["--b", "-i", "-w"],
     });
 });

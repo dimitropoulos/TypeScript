@@ -1,4 +1,4 @@
-currentDirectory:: / useCaseSensitiveFileNames: false
+currentDirectory:: /home/src/vscode/projects/bin useCaseSensitiveFileNames: false
 Info seq  [hh:mm:ss:mss] Provided types map file "/typesMap.json" doesn't exist
 Before request
 //// [/home/src/projects/project/node_modules/@types/bar/package.json]
@@ -138,7 +138,7 @@ import { bar2 } from "bar2";
   ]
 }
 
-//// [/a/lib/lib.d.ts]
+//// [/home/src/tslibs/ts/lib/lib.d.ts]
 /// <reference no-default-lib="true"/>
 interface Boolean {}
 interface Function {}
@@ -150,6 +150,8 @@ interface Object {}
 interface RegExp {}
 interface String { charAt: any; }
 interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
 
 
 Info seq  [hh:mm:ss:mss] request:
@@ -363,10 +365,13 @@ Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/pack
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined WatchType: Closed Script info
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects 0 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects 0 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules 1 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
@@ -381,16 +386,19 @@ Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/pro
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules/foo2/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules/bar2/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/projects/project/node_modules/@types/bar2/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/package.json 2000 undefined Project: /home/src/projects/project/tsconfig.json WatchType: File location affecting resolution
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 
-	../../../../a/lib/lib.d.ts
+	../../tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	node_modules/foo2/index.d.ts
 	  Imported via "foo2" from file 'index.mts' with packageId 'foo2/index.d.ts@1.0.0'
@@ -428,7 +436,7 @@ Info seq  [hh:mm:ss:mss] event:
             "tsx": 0,
             "tsxSize": 0,
             "dts": 3,
-            "dtsSize": 402,
+            "dtsSize": 481,
             "deferred": 0,
             "deferredSize": 0
           },
@@ -505,10 +513,14 @@ After request
 PolledWatches::
 /home/src/projects/node_modules: *new*
   {"pollingInterval":500}
+/home/src/tslibs/package.json: *new*
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/lib/package.json: *new*
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/package.json: *new*
+  {"pollingInterval":2000}
 
 FsWatches::
-/a/lib/lib.d.ts: *new*
-  {}
 /home/src/projects: *new*
   {}
 /home/src/projects/project: *new*
@@ -527,6 +539,8 @@ FsWatches::
   {}
 /home/src/projects/project/tsconfig.json: *new*
   {}
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
+  {}
 
 FsWatchesRecursive::
 /home/src/projects/project/node_modules: *new*
@@ -538,10 +552,6 @@ Projects::
     projectProgramVersion: 1
 
 ScriptInfos::
-/a/lib/lib.d.ts *new*
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open) *new*
     version: SVC-1-0
     containingProjects: 1
@@ -551,6 +561,10 @@ ScriptInfos::
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
 /home/src/projects/project/node_modules/foo2/index.d.ts *new*
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
+/home/src/tslibs/ts/lib/lib.d.ts *new*
     version: Text-1
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
@@ -787,8 +801,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Found 'package.json' at '/home/src/projects/project/node_modules/@types/bar2/package.json'.
@@ -879,13 +896,16 @@ Info seq  [hh:mm:ss:mss] Reusing resolution of module 'foo2' from '/home/src/pro
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/@types/bar2/index.d.ts' with Package ID '@types/bar2/index.d.ts@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -1136,8 +1156,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Found 'package.json' at '/home/src/projects/project/node_modules/foo2/package.json'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
@@ -1208,13 +1231,16 @@ Info seq  [hh:mm:ss:mss] Reusing resolution of module 'foo2' from '/home/src/pro
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/@types/bar2/index.d.ts' with Package ID '@types/bar2/index.d.ts@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 3 projectProgramVersion: 2 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -1467,8 +1493,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Found 'package.json' at '/home/src/projects/project/node_modules/@types/bar2/package.json'.
@@ -1547,13 +1576,16 @@ Info seq  [hh:mm:ss:mss] Reusing resolution of module 'foo2' from '/home/src/pro
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/@types/bar2/index.d.ts' with Package ID '@types/bar2/index.d.ts@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 4 projectProgramVersion: 3 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -1806,8 +1838,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Found 'package.json' at '/home/src/projects/project/node_modules/foo2/package.json'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
@@ -1865,13 +1900,16 @@ Info seq  [hh:mm:ss:mss] Reusing resolution of module 'foo2' from '/home/src/pro
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/@types/bar2/index.d.ts' with Package ID '@types/bar2/index.d.ts@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 5 projectProgramVersion: 4 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -2132,8 +2170,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
@@ -2173,20 +2214,23 @@ Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/pro
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 6 projectProgramVersion: 5 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (5)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/node_modules/@types/bar2/index.d.ts Text-1 "export declare const bar2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 
-	../../../../a/lib/lib.d.ts
+	../../tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	node_modules/@types/bar/index.d.ts
 	  Imported via "bar" from file 'index.mts' with packageId '@types/bar/index.d.ts@1.0.0'
@@ -2249,10 +2293,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -2266,6 +2306,10 @@ ScriptInfos::
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
 /home/src/projects/project/node_modules/foo2/index.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
+/home/src/tslibs/ts/lib/lib.d.ts
     version: Text-1
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
@@ -2464,8 +2508,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
@@ -2497,15 +2544,18 @@ Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/packa
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Close:: WatchInfo: /home/src/projects/node_modules 1 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Close:: WatchInfo: /home/src/projects/node_modules 1 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 7 projectProgramVersion: 6 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (6)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
@@ -2513,7 +2563,7 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 
-	../../../../a/lib/lib.d.ts
+	../../tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	node_modules/foo/index.d.ts
 	  Imported via "foo" from file 'index.mts' with packageId 'foo/index.d.ts@1.0.0'
@@ -2568,13 +2618,19 @@ Info seq  [hh:mm:ss:mss] event:
     }
 After running Timeout callback:: count: 0
 
+PolledWatches::
+/home/src/tslibs/package.json:
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/lib/package.json:
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/package.json:
+  {"pollingInterval":2000}
+
 PolledWatches *deleted*::
 /home/src/projects/node_modules:
   {"pollingInterval":500}
 
 FsWatches::
-/a/lib/lib.d.ts:
-  {}
 /home/src/projects:
   {}
 /home/src/projects/project:
@@ -2593,6 +2649,8 @@ FsWatches::
   {}
 /home/src/projects/project/tsconfig.json:
   {}
+/home/src/tslibs/ts/lib/lib.d.ts:
+  {}
 
 FsWatchesRecursive::
 /home/src/projects/project/node_modules:
@@ -2608,10 +2666,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -2629,6 +2683,10 @@ ScriptInfos::
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
 /home/src/projects/project/node_modules/foo2/index.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
+/home/src/tslibs/ts/lib/lib.d.ts
     version: Text-1
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
@@ -2810,8 +2868,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -2895,22 +2956,25 @@ Info seq  [hh:mm:ss:mss] ======== Module name 'bar2' was successfully resolved t
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo2/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/node_modules 1 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /home/src/projects/node_modules 1 undefined Project: /home/src/projects/project/tsconfig.json WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 8 projectProgramVersion: 7 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (5)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/node_modules/foo2/index.d.ts Text-1 "export declare const foo2: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 
-	../../../../a/lib/lib.d.ts
+	../../tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	node_modules/foo/index.d.ts
 	  Imported via "foo" from file 'index.mts' with packageId 'foo/index.d.ts@1.0.0'
@@ -2966,10 +3030,14 @@ After running Timeout callback:: count: 0
 PolledWatches::
 /home/src/projects/node_modules: *new*
   {"pollingInterval":500}
+/home/src/tslibs/package.json:
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/lib/package.json:
+  {"pollingInterval":2000}
+/home/src/tslibs/ts/package.json:
+  {"pollingInterval":2000}
 
 FsWatches::
-/a/lib/lib.d.ts:
-  {}
 /home/src/projects:
   {}
 /home/src/projects/project:
@@ -2988,6 +3056,8 @@ FsWatches::
   {}
 /home/src/projects/project/tsconfig.json:
   {}
+/home/src/tslibs/ts/lib/lib.d.ts:
+  {}
 
 FsWatchesRecursive::
 /home/src/projects/project/node_modules:
@@ -3003,10 +3073,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -3024,6 +3090,10 @@ ScriptInfos::
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
 /home/src/projects/project/node_modules/foo2/index.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
+/home/src/tslibs/ts/lib/lib.d.ts
     version: Text-1
     containingProjects: 1
         /home/src/projects/project/tsconfig.json
@@ -3221,8 +3291,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -3281,19 +3354,22 @@ Info seq  [hh:mm:ss:mss] ======== Module name 'foo2' was successfully resolved t
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/bar2/index.mjs' with Package ID 'bar2/index.mjs@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 9 projectProgramVersion: 8 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 
-	../../../../a/lib/lib.d.ts
+	../../tslibs/ts/lib/lib.d.ts
 	  Default library for target 'es5'
 	node_modules/foo/index.d.ts
 	  Imported via "foo" from file 'index.mts' with packageId 'foo/index.d.ts@1.0.0'
@@ -3354,10 +3430,6 @@ Projects::
     dirty: false *changed*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -3377,6 +3449,10 @@ ScriptInfos::
     version: Text-1
     containingProjects: 0 *changed*
         /home/src/projects/project/tsconfig.json *deleted*
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
 
 Before running Immedidate callback:: count: 1
 17: semanticCheck
@@ -3527,10 +3603,6 @@ Timeout callback:: count: 1
 34: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation *new*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -3551,6 +3623,10 @@ ScriptInfos::
 /home/src/projects/project/node_modules/foo2/index.d.ts
     version: Text-1
     containingProjects: 0
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/projects/project/tsconfig.json
@@ -3599,8 +3675,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -3691,13 +3770,16 @@ Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/projects/project/nod
 Info seq  [hh:mm:ss:mss] ======== Module name 'bar2' was successfully resolved to '/home/src/projects/project/node_modules/bar2/index.mjs' with Package ID 'bar2/index.mjs@1.0.0'. ========
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 10 projectProgramVersion: 9 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -3902,10 +3984,6 @@ Timeout callback:: count: 1
 38: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation *new*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -3928,6 +4006,10 @@ ScriptInfos::
     pendingReloadFromDisk: true *changed*
     deferredDelete: true *changed*
     containingProjects: 0
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/projects/project/tsconfig.json
@@ -3976,8 +4058,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -4048,13 +4133,16 @@ Info seq  [hh:mm:ss:mss] ======== Module name 'foo2' was successfully resolved t
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/bar2/index.mjs' with Package ID 'bar2/index.mjs@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 11 projectProgramVersion: 10 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -4261,10 +4349,6 @@ Timeout callback:: count: 1
 42: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation *new*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -4287,6 +4371,10 @@ ScriptInfos::
     pendingReloadFromDisk: true
     deferredDelete: true
     containingProjects: 0
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/projects/project/tsconfig.json
@@ -4335,8 +4423,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -4415,13 +4506,16 @@ Info seq  [hh:mm:ss:mss] Resolving real path for '/home/src/projects/project/nod
 Info seq  [hh:mm:ss:mss] ======== Module name 'bar2' was successfully resolved to '/home/src/projects/project/node_modules/bar2/index.mjs' with Package ID 'bar2/index.mjs@1.0.0'. ========
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 12 projectProgramVersion: 11 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
@@ -4628,10 +4722,6 @@ Timeout callback:: count: 1
 46: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation *new*
 
 ScriptInfos::
-/a/lib/lib.d.ts
-    version: Text-1
-    containingProjects: 1
-        /home/src/projects/project/tsconfig.json
 /home/src/projects/project/index.mts (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -4653,6 +4743,10 @@ ScriptInfos::
     pendingReloadFromDisk: true
     deferredDelete: undefined *changed*
     containingProjects: 0
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /home/src/projects/project/tsconfig.json
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.jsonFailedLookupInvalidation
 Info seq  [hh:mm:ss:mss] Scheduled: /home/src/projects/project/tsconfig.json
@@ -4701,8 +4795,11 @@ Before running Timeout callback:: count: 3
 
 Info seq  [hh:mm:ss:mss] Running: /home/src/projects/project/tsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /home/src/projects/project/tsconfig.json
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
@@ -4760,13 +4857,16 @@ Info seq  [hh:mm:ss:mss] ======== Module name 'foo2' was successfully resolved t
 Info seq  [hh:mm:ss:mss] Reusing resolution of module 'bar2' from '/home/src/projects/project/index.mts' of old program, it was successfully resolved to '/home/src/projects/project/node_modules/bar2/index.mjs' with Package ID 'bar2/index.mjs@1.0.0'.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/foo/package.json' exists according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/home/src/projects/project/node_modules/@types/bar/package.json' exists according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/lib/package.json' does not exist according to earlier cached lookups.
-Info seq  [hh:mm:ss:mss] File '/a/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/lib/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/ts/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/tslibs/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/src/package.json' does not exist according to earlier cached lookups.
+Info seq  [hh:mm:ss:mss] File '/home/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] File '/package.json' does not exist according to earlier cached lookups.
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /home/src/projects/project/tsconfig.json projectStateVersion: 13 projectProgramVersion: 12 structureChanged: true structureIsReused:: SafeModules Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
-	/a/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }"
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/home/src/projects/project/node_modules/foo/index.d.ts Text-1 "export declare const foo: number;"
 	/home/src/projects/project/node_modules/@types/bar/index.d.ts Text-1 "export declare const bar: number;"
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
