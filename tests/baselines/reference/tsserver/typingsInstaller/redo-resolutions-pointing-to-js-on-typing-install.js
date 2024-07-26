@@ -32,6 +32,8 @@ Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/pr
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /a/lib/lib.d.ts 500 undefined Project: /dev/null/inferredProject1* WatchType: Missing file
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/b/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/b/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
@@ -65,6 +67,8 @@ PolledWatches::
   {"pollingInterval":500}
 /user/username/projects/a/b/tsconfig.json: *new*
   {"pollingInterval":2000}
+/user/username/projects/a/cache/node_modules: *new*
+  {"pollingInterval":500}
 /user/username/projects/a/jsconfig.json: *new*
   {"pollingInterval":2000}
 /user/username/projects/a/node_modules: *new*
@@ -103,6 +107,18 @@ TI:: [hh:mm:ss:mss] Npm config file: /user/username/projects/a/cache/package.jso
 TI:: [hh:mm:ss:mss] Npm config file: '/user/username/projects/a/cache/package.json' is missing, creating new one...
 TI:: [hh:mm:ss:mss] Updating types-registry npm package...
 TI:: [hh:mm:ss:mss] npm install --ignore-scripts types-registry@latest
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/types-registry :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/types-registry :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/types-registry/index.json :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/types-registry/index.json :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 TI:: [hh:mm:ss:mss] Updated types-registry npm package
 TI:: typing installer creation complete
 //// [/user/username/projects/a/cache/package.json]
@@ -125,6 +141,41 @@ TI:: typing installer creation complete
   }
 }
 
+
+PolledWatches::
+/a/lib/lib.d.ts:
+  {"pollingInterval":500}
+/user/username/projects/a/b/jsconfig.json:
+  {"pollingInterval":2000}
+/user/username/projects/a/b/node_modules:
+  {"pollingInterval":500}
+/user/username/projects/a/b/node_modules/@types:
+  {"pollingInterval":500}
+/user/username/projects/a/b/tsconfig.json:
+  {"pollingInterval":2000}
+/user/username/projects/a/jsconfig.json:
+  {"pollingInterval":2000}
+/user/username/projects/a/node_modules:
+  {"pollingInterval":500}
+/user/username/projects/a/node_modules/@types:
+  {"pollingInterval":500}
+/user/username/projects/a/tsconfig.json:
+  {"pollingInterval":2000}
+/user/username/projects/node_modules/@types:
+  {"pollingInterval":500}
+
+PolledWatches *deleted*::
+/user/username/projects/a/cache/node_modules:
+  {"pollingInterval":500}
+
+FsWatchesRecursive::
+/user/username/projects/a/cache/node_modules: *new*
+  {}
+/user/username/projects/node_modules:
+  {}
+
+Timeout callback:: count: 1
+4: /dev/null/inferredProject1*FailedLookupInvalidation *new*
 
 TI:: [hh:mm:ss:mss] Got install request
     {
@@ -244,6 +295,8 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatchesRecursive::
+/user/username/projects/a/cache/node_modules:
+  {}
 /user/username/projects/node_modules:
   {}
 
@@ -262,12 +315,25 @@ Before running PendingInstalls callback:: count: 1
   "@types/commander@tsFakeMajor.Minor"
 ]
 
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types/commander :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types/commander :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types/commander/index.d.ts :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*FailedLookupInvalidation, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Triggered with /user/username/projects/a/cache/node_modules/@types/commander/index.d.ts :: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 TI:: Installation #1 with arguments:: [
   "@types/commander@tsFakeMajor.Minor"
 ] complete with success::true
 //// [/user/username/projects/a/cache/node_modules/@types/commander/index.d.ts]
 
 
+
+Timeout callback:: count: 1
+4: /dev/null/inferredProject1*FailedLookupInvalidation *deleted*
+7: /dev/null/inferredProject1*FailedLookupInvalidation *new*
 
 TI:: [hh:mm:ss:mss] Installed typings ["@types/commander@tsFakeMajor.Minor"]
 TI:: [hh:mm:ss:mss] Installed typing files ["/user/username/projects/a/cache/node_modules/@types/commander/index.d.ts"]
@@ -352,9 +418,10 @@ Info seq  [hh:mm:ss:mss] event:
     }
 After running PendingInstalls callback:: count: 0
 
-Timeout callback:: count: 2
-1: /dev/null/inferredProject1* *new*
-2: *ensureProjectForOpenFiles* *new*
+Timeout callback:: count: 3
+7: /dev/null/inferredProject1*FailedLookupInvalidation
+8: /dev/null/inferredProject1* *new*
+9: *ensureProjectForOpenFiles* *new*
 
 Projects::
 /dev/null/inferredProject1* (Inferred) *changed*
@@ -362,14 +429,28 @@ Projects::
     projectProgramVersion: 1
     dirty: true *changed*
 
+Before running Timeout callback:: count: 3
+7: /dev/null/inferredProject1*FailedLookupInvalidation
+8: /dev/null/inferredProject1*
+9: *ensureProjectForOpenFiles*
+
+Info seq  [hh:mm:ss:mss] Running: /dev/null/inferredProject1*FailedLookupInvalidation
+Info seq  [hh:mm:ss:mss] Scheduled: /dev/null/inferredProject1*, Cancelled earlier one
+Info seq  [hh:mm:ss:mss] Scheduled: *ensureProjectForOpenFiles*, Cancelled earlier one
+After running Timeout callback:: count: 2
+
+Timeout callback:: count: 2
+8: /dev/null/inferredProject1* *deleted*
+9: *ensureProjectForOpenFiles* *deleted*
+10: /dev/null/inferredProject1* *new*
+11: *ensureProjectForOpenFiles* *new*
+
 Before running Timeout callback:: count: 2
-1: /dev/null/inferredProject1*
-2: *ensureProjectForOpenFiles*
+10: /dev/null/inferredProject1*
+11: *ensureProjectForOpenFiles*
 
 Info seq  [hh:mm:ss:mss] Running: /dev/null/inferredProject1*
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
-Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
-Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/a/cache/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (2)
@@ -474,40 +555,10 @@ Info seq  [hh:mm:ss:mss] event:
 TI:: [hh:mm:ss:mss] No new typings were requested as a result of typings discovery
 After running Timeout callback:: count: 2
 
-PolledWatches::
-/a/lib/lib.d.ts:
-  {"pollingInterval":500}
-/user/username/projects/a/b/bower_components:
-  {"pollingInterval":500}
-/user/username/projects/a/b/jsconfig.json:
-  {"pollingInterval":2000}
-/user/username/projects/a/b/node_modules:
-  {"pollingInterval":500}
-/user/username/projects/a/b/node_modules/@types:
-  {"pollingInterval":500}
-/user/username/projects/a/b/tsconfig.json:
-  {"pollingInterval":2000}
-/user/username/projects/a/jsconfig.json:
-  {"pollingInterval":2000}
-/user/username/projects/a/node_modules:
-  {"pollingInterval":500}
-/user/username/projects/a/node_modules/@types:
-  {"pollingInterval":500}
-/user/username/projects/a/tsconfig.json:
-  {"pollingInterval":2000}
-/user/username/projects/node_modules/@types:
-  {"pollingInterval":500}
-
-FsWatchesRecursive::
-/user/username/projects/a/cache/node_modules: *new*
-  {}
-/user/username/projects/node_modules:
-  {}
-
 Timeout callback:: count: 2
-2: *ensureProjectForOpenFiles* *deleted*
-3: /dev/null/inferredProject1* *new*
-4: *ensureProjectForOpenFiles* *new*
+11: *ensureProjectForOpenFiles* *deleted*
+12: /dev/null/inferredProject1* *new*
+13: *ensureProjectForOpenFiles* *new*
 
 Projects::
 /dev/null/inferredProject1* (Inferred) *changed*
