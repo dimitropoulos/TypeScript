@@ -527,11 +527,11 @@ function resolveModuleNameUsingGlobalCache(
         moduleResolutionCache,
     );
     primaryResult.globalCacheResolution = primaryResult.resolvedModule ?? true;
+    primaryResult.failedLookupLocations = updateResolutionField(primaryResult.failedLookupLocations, failedLookupLocations);
+    primaryResult.affectingLocations = updateResolutionField(primaryResult.affectingLocations, affectingLocations);
     if (resolvedModule) {
         // Modify existing resolution so its saved in the directory cache as well
         (primaryResult.resolvedModule as any) = resolvedModule;
-        primaryResult.failedLookupLocations = updateResolutionField(primaryResult.failedLookupLocations, failedLookupLocations);
-        primaryResult.affectingLocations = updateResolutionField(primaryResult.affectingLocations, affectingLocations);
         primaryResult.resolutionDiagnostics = updateResolutionField(primaryResult.resolutionDiagnostics, resolutionDiagnostics);
     }
     return primaryResult;
