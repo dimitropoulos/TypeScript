@@ -8,7 +8,6 @@ import { loadProjectFromFiles } from "./vfs.js";
 import {
     createServerHost,
     createWatchedSystem,
-    libFile,
 } from "./virtualFileSystemWithWatch.js";
 
 export function getFsContentsForSampleProjectReferencesLogicConfig(withNodeNext?: boolean) {
@@ -28,7 +27,6 @@ export function getFsContentsForSampleProjectReferencesLogicConfig(withNodeNext?
 }
 export function getFsContentsForSampleProjectReferences(withNodeNext?: boolean): FsContents {
     return {
-        [libFile.path]: libFile.content,
         "/user/username/projects/sample1/core/tsconfig.json": jsonToReadableText({
             compilerOptions: {
                 ...getProjectConfigWithNodeNext(withNodeNext),
@@ -84,19 +82,14 @@ export function getFsContentsForSampleProjectReferences(withNodeNext?: boolean):
 export function getFsForSampleProjectReferences() {
     return loadProjectFromFiles(
         getFsContentsForSampleProjectReferences(),
-        {
-            cwd: "/user/username/projects/sample1",
-            executingFilePath: libFile.path,
-        },
+        { currentDirectory: "/user/username/projects/sample1" },
     );
 }
 
 export function getSysForSampleProjectReferences(withNodeNext?: boolean) {
     return createWatchedSystem(
         getFsContentsForSampleProjectReferences(withNodeNext),
-        {
-            currentDirectory: "/user/username/projects/sample1",
-        },
+        { currentDirectory: "/user/username/projects/sample1" },
     );
 }
 

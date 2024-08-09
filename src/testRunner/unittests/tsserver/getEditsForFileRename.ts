@@ -11,7 +11,6 @@ import {
 import {
     createServerHost,
     File,
-    libFile,
 } from "../helpers/virtualFileSystemWithWatch.js";
 
 describe("unittests:: tsserver:: getEditsForFileRename::", () => {
@@ -129,7 +128,6 @@ describe("unittests:: tsserver:: getEditsForFileRename::", () => {
                                 },
                             },
                         }),
-                        [libFile.path]: libFile.content,
                     });
                     const session = new TestSession({ host, canUseWatchEvents: true, canUseEvents: true });
                     if (withUpdateOpen) {

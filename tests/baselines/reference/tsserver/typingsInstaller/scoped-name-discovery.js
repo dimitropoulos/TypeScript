@@ -30,6 +30,21 @@ Before request
   "name": "@zkat/cacache"
 }
 
+//// [/home/src/tslibs/ts/lib/lib.d.ts]
+/// <reference no-default-lib="true"/>
+interface Boolean {}
+interface Function {}
+interface CallableFunction {}
+interface NewableFunction {}
+interface IArguments {}
+interface Number { toExponential: any; }
+interface Object {}
+interface RegExp {}
+interface String { charAt: any; }
+interface Array<T> { length: number; [n: number]: T; }
+interface ReadonlyArray<T> {}
+declare const console: { log(msg: any): void; };
+
 
 Info seq  [hh:mm:ss:mss] request:
     {
@@ -69,17 +84,20 @@ Info seq  [hh:mm:ss:mss] Config: /user/username/projects/project/jsconfig.json :
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project 1 undefined Config: /user/username/projects/project/jsconfig.json WatchType: Wild card directory
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project 1 undefined Config: /user/username/projects/project/jsconfig.json WatchType: Wild card directory
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /user/username/projects/project/jsconfig.json
-Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 500 undefined Project: /user/username/projects/project/jsconfig.json WatchType: Missing file
+Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /home/src/tslibs/ts/lib/lib.d.ts 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules/@types 1 undefined Project: /user/username/projects/project/jsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/project/node_modules/@types 1 undefined Project: /user/username/projects/project/jsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/node_modules/@types 1 undefined Project: /user/username/projects/project/jsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Elapsed:: *ms DirectoryWatcher:: Added:: WatchInfo: /user/username/projects/node_modules/@types 1 undefined Project: /user/username/projects/project/jsconfig.json WatchType: Type roots
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project/jsconfig.json projectStateVersion: 1 projectProgramVersion: 0 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/jsconfig.json' (Configured)
-Info seq  [hh:mm:ss:mss] 	Files (1)
+Info seq  [hh:mm:ss:mss] 	Files (2)
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project/app.js SVC-1-0 ""
 
 
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
+	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
 
@@ -87,14 +105,14 @@ Info seq  [hh:mm:ss:mss] -----------------------------------------------
 TI:: Creating typing installer
 
 PolledWatches::
-/home/src/tslibs/ts/lib/lib.d.ts: *new*
-  {"pollingInterval":500}
 /user/username/projects/node_modules/@types: *new*
   {"pollingInterval":500}
 /user/username/projects/project/node_modules/@types: *new*
   {"pollingInterval":500}
 
 FsWatches::
+/home/src/tslibs/ts/lib/lib.d.ts: *new*
+  {}
 /user/username/projects/project/jsconfig.json: *new*
   {}
 
@@ -108,6 +126,10 @@ Projects::
     projectProgramVersion: 0
 
 ScriptInfos::
+/home/src/tslibs/ts/lib/lib.d.ts *new*
+    version: Text-1
+    containingProjects: 1
+        /user/username/projects/project/jsconfig.json
 /user/username/projects/project/app.js (Open) *new*
     version: SVC-1-0
     containingProjects: 1
@@ -170,6 +192,7 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project/jsconfig.json",
       "fileNames": [
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project/app.js"
       ],
       "compilerOptions": {
@@ -286,8 +309,8 @@ Info seq  [hh:mm:ss:mss] event:
             "tsSize": 0,
             "tsx": 0,
             "tsxSize": 0,
-            "dts": 0,
-            "dtsSize": 0,
+            "dts": 1,
+            "dtsSize": 413,
             "deferred": 0,
             "deferredSize": 0
           },
@@ -323,57 +346,11 @@ Info seq  [hh:mm:ss:mss] event:
       "body": {
         "triggerFile": "/user/username/projects/project/app.js",
         "configFile": "/user/username/projects/project/jsconfig.json",
-        "diagnostics": [
-          {
-            "text": "File '/home/src/tslibs/ts/lib/lib.d.ts' not found.\n  The file is in the program because:\n    Default library for target 'es5'",
-            "code": 6053,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'Array'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'Boolean'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'Function'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'IArguments'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'Number'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'Object'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'RegExp'.",
-            "code": 2318,
-            "category": "error"
-          },
-          {
-            "text": "Cannot find global type 'String'.",
-            "code": 2318,
-            "category": "error"
-          }
-        ]
+        "diagnostics": []
       }
     }
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/jsconfig.json' (Configured)
-Info seq  [hh:mm:ss:mss] 	Files (1)
+Info seq  [hh:mm:ss:mss] 	Files (2)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
 Info seq  [hh:mm:ss:mss] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
@@ -398,8 +375,6 @@ Info seq  [hh:mm:ss:mss] response:
 After request
 
 PolledWatches::
-/home/src/tslibs/ts/lib/lib.d.ts:
-  {"pollingInterval":500}
 /user/username/projects/node_modules/@types:
   {"pollingInterval":500}
 /user/username/projects/project/bower_components: *new*
@@ -408,6 +383,8 @@ PolledWatches::
   {"pollingInterval":500}
 
 FsWatches::
+/home/src/tslibs/ts/lib/lib.d.ts:
+  {}
 /user/username/projects/project/jsconfig.json:
   {}
 /user/username/projects/project/package.json: *new*
@@ -434,6 +411,10 @@ Projects::
     autoImportProviderHost: /dev/null/autoImportProviderProject1* *changed*
 
 ScriptInfos::
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /user/username/projects/project/jsconfig.json
 /user/username/projects/project/app.js (Open)
     version: SVC-1-0
     containingProjects: 1
@@ -558,11 +539,14 @@ Info seq  [hh:mm:ss:mss] Running: /user/username/projects/project/jsconfig.json
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /user/username/projects/project/jsconfig.json
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project/jsconfig.json projectStateVersion: 2 projectProgramVersion: 1 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/jsconfig.json' (Configured)
-Info seq  [hh:mm:ss:mss] 	Files (2)
+Info seq  [hh:mm:ss:mss] 	Files (3)
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project/app.js SVC-1-0 ""
 	/home/src/typinginstaller/globalcache/data/node_modules/@types/zkat__cacache/index.d.ts Text-1 ""
 
 
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
+	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
 	../../../../home/src/typinginstaller/globalcache/data/node_modules/@types/zkat__cacache/index.d.ts
@@ -577,6 +561,7 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project/jsconfig.json",
       "fileNames": [
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project/app.js",
         "/home/src/typinginstaller/globalcache/data/node_modules/@types/zkat__cacache/index.d.ts"
       ],
@@ -675,10 +660,13 @@ Info seq  [hh:mm:ss:mss] event:
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /user/username/projects/project/jsconfig.json
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /user/username/projects/project/jsconfig.json projectStateVersion: 3 projectProgramVersion: 2 structureChanged: true structureIsReused:: Not Elapsed:: *ms
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/project/jsconfig.json' (Configured)
-Info seq  [hh:mm:ss:mss] 	Files (1)
+Info seq  [hh:mm:ss:mss] 	Files (2)
+	/home/src/tslibs/ts/lib/lib.d.ts Text-1 "/// <reference no-default-lib=\"true\"/>\ninterface Boolean {}\ninterface Function {}\ninterface CallableFunction {}\ninterface NewableFunction {}\ninterface IArguments {}\ninterface Number { toExponential: any; }\ninterface Object {}\ninterface RegExp {}\ninterface String { charAt: any; }\ninterface Array<T> { length: number; [n: number]: T; }\ninterface ReadonlyArray<T> {}\ndeclare const console: { log(msg: any): void; };"
 	/user/username/projects/project/app.js SVC-1-0 ""
 
 
+	../../../../home/src/tslibs/ts/lib/lib.d.ts
+	  Default library for target 'es5'
 	app.js
 	  Matched by default include pattern '**/*'
 
@@ -691,6 +679,7 @@ TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/user/username/projects/project/jsconfig.json",
       "fileNames": [
+        "/home/src/tslibs/ts/lib/lib.d.ts",
         "/user/username/projects/project/app.js"
       ],
       "compilerOptions": {
@@ -802,6 +791,10 @@ Projects::
     autoImportProviderHost: /dev/null/autoImportProviderProject1*
 
 ScriptInfos::
+/home/src/tslibs/ts/lib/lib.d.ts
+    version: Text-1
+    containingProjects: 1
+        /user/username/projects/project/jsconfig.json
 /home/src/typinginstaller/globalcache/data/node_modules/@types/zkat__cacache/index.d.ts *new*
     version: Text-1
     containingProjects: 0

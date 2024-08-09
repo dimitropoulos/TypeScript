@@ -240,7 +240,7 @@ After request
 
 Before running Timeout callback:: count: 1
 1: pollPollingIntervalQueue
-//// [/a/username/workspace/project/src/file2.ts] Inode:: 15
+//// [/a/username/workspace/project/src/file2.ts] Inode:: 105
 
 
 
@@ -335,7 +335,7 @@ FsWatches::
 /a/username/workspace/project/src/file1.ts:
   {"inode":7}
 /a/username/workspace/project/src/file2.ts: *new*
-  {"inode":15}
+  {"inode":105}
 /a/username/workspace/project/tsconfig.json:
   {"inode":8}
 /home/src/tslibs/ts/lib/lib.d.ts:
