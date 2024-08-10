@@ -303,7 +303,7 @@ export function sortAndDeduplicateDiagnostics<T extends Diagnostic>(diagnostics:
     return sortAndDeduplicate<T>(diagnostics, compareDiagnostics, diagnosticsEqualityComparer);
 }
 
-/** @interanl */
+/** @internal */
 export const targetToLibMap = new Map<ScriptTarget, string>([
     [ScriptTarget.ESNext, "lib.esnext.full.d.ts"],
     [ScriptTarget.ES2023, "lib.es2023.full.d.ts"],
