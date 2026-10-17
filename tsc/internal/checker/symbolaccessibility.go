@@ -3,6 +3,7 @@ package checker
 import (
 	"cmp"
 	"slices"
+	"strings"
 
 	"github.com/microsoft/TypeScript/tsc/internal/ast"
 	"github.com/microsoft/TypeScript/tsc/internal/collections"
@@ -144,11 +145,28 @@ func (c *Checker) getWithAlternativeContainers(container *ast.Symbol, symbol *as
 		c.getDeclaredTypeOfSymbol(container).flags&TypeFlagsObject != 0 {
 		c.someSymbolTableInScope(enclosingDeclaration, func(t ast.SymbolTable, _ symbolTableID, _ bool, _ bool, _ *ast.Node) bool {
 			found := false
-			for _, s := range t {
-				if s.Flags()&leftMeaning != 0 && c.getTypeOfSymbol(s) == c.getDeclaredTypeOfSymbol(container) {
+			check := func(s *ast.Symbol) {
+				if c.getTypeOfSymbol(s) == c.getDeclaredTypeOfSymbol(container) {
 					variableMatches = append(variableMatches, s)
 					found = true
 				}
+			}
+			var unresolved []*ast.Symbol
+			for _, s := range t {
+				if s.Flags()&leftMeaning == 0 {
+					continue
+				}
+				if links := c.valueSymbolLinks.TryGet(s); links != nil && links.resolvedType != nil {
+					check(s)
+				} else {
+					unresolved = append(unresolved, s)
+				}
+			}
+			// Getting the types that are not resolved yet can create types and resolve aliases, so do it in a stable
+			// order rather than in the random iteration order of the symbol table.
+			c.sortSymbols(unresolved)
+			for _, s := range unresolved {
+				check(s)
 			}
 			return found
 		})
@@ -262,14 +280,43 @@ func (c *Checker) buildExternalModuleContainerIndex() {
 		}
 		container := c.getSymbolOfDeclaration(file.AsNode())
 		index.moduleOrder[container] = len(index.moduleOrder)
-		for _, exported := range c.getExportsOfSymbol(container) {
+		c.forEachSymbolInResolutionOrder(c.getExportsOfSymbol(container), func(_ string, exported *ast.Symbol) {
 			index.add(c.getResolvedTarget(exported), container)
-		}
+		})
 		if exportEquals := container.Exports()[ast.InternalSymbolNameExportEquals]; exportEquals != nil {
 			index.add(c.getResolvedTarget(exportEquals), container)
 		}
 	}
 	index.complete = true
+}
+
+// forEachSymbolInResolutionOrder calls f for each entry of a symbol table, in an order that does not depend on the
+// table's random iteration order wherever resolving the symbols can have side effects. Symbols that are not aliases
+// resolve to themselves and come first, in table order. Resolving an alias can create types, so aliases come last,
+// sorted. f gets each symbol's key in the table, which is not always the symbol's name (a default export is keyed
+// "default" under its declared name).
+func (c *Checker) forEachSymbolInResolutionOrder(symbols ast.SymbolTable, f func(name string, symbol *ast.Symbol)) {
+	type entry struct {
+		name   string
+		symbol *ast.Symbol
+	}
+	var aliases []entry
+	for name, symbol := range symbols {
+		if symbol.Flags()&ast.SymbolFlagsAlias != 0 {
+			aliases = append(aliases, entry{name, symbol})
+		} else {
+			f(name, symbol)
+		}
+	}
+	slices.SortFunc(aliases, func(a, b entry) int {
+		if r := c.compareSymbols(a.symbol, b.symbol); r != 0 {
+			return r
+		}
+		return strings.Compare(a.name, b.name)
+	})
+	for _, alias := range aliases {
+		f(alias.name, alias.symbol)
+	}
 }
 
 func (c *Checker) scanExternalModuleContainers(symbol *ast.Symbol) []*ast.Symbol {
@@ -420,11 +467,11 @@ func (c *Checker) getAliasForSymbolInContainer(container *ast.Symbol, symbol *as
 		return quick
 	}
 	var candidates []*ast.Symbol
-	for _, exported := range exports {
+	c.forEachSymbolInResolutionOrder(exports, func(_ string, exported *ast.Symbol) {
 		if c.getSymbolIfSameReference(exported, symbol) != nil {
 			candidates = append(candidates, exported)
 		}
-	}
+	})
 	if len(candidates) > 0 {
 		c.sortSymbols(candidates) // _must_ sort exports for stable results - symbol table is randomly iterated
 		return candidates[0]
@@ -585,6 +632,9 @@ func (c *Checker) getSymbolTableAliases(symbols ast.SymbolTable, tableId symbolT
 			aliases = append(aliases, sym)
 		}
 	}
+	// The aliases are resolved in this order, which creates types, so sort them rather than using the random
+	// iteration order of the symbol table.
+	c.sortSymbols(aliases)
 	if kind == stKindGlobals || kind == stKindExports || kind == stKindResolvedExports {
 		if c.symbolTableAliasCache == nil {
 			c.symbolTableAliasCache = make(map[symbolTableID][]*ast.Symbol)
