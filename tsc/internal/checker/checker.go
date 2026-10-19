@@ -820,6 +820,9 @@ type Checker struct {
 	typeResolutions                             []TypeResolution
 	resolutionStart                             int
 	varianceStack                               []VarianceStackEntry
+	membersResolutionStack                      []membersResolutionEntry
+	membersResolutionGenerations                map[*Type]int
+	canonicalMembers                            map[*Type]structuredMembersSnapshot
 	callResolutionStack                         []*ast.Node
 	apparentArgumentCount                       *int
 	lastGetCombinedNodeFlagsNode                *ast.Node
@@ -19531,6 +19534,8 @@ func (c *Checker) isApplicableIndexType(source *Type, target *Type) bool {
 
 func (c *Checker) resolveStructuredTypeMembers(t *Type) *StructuredType {
 	if t.objectFlags&ObjectFlagsMembersResolved == 0 {
+		c.membersResolutionStack = append(c.membersResolutionStack, membersResolutionEntry{t, c.membersResolutionGenerations[t]})
+		defer c.popMembersResolution()
 		switch {
 		case t.flags&TypeFlagsObject != 0:
 			switch {
@@ -19554,8 +19559,108 @@ func (c *Checker) resolveStructuredTypeMembers(t *Type) *StructuredType {
 		default:
 			panic("Unhandled case in resolveStructuredTypeMembers")
 		}
+	} else if index := c.getMembersResolutionStackIndex(t); index >= 0 {
+		c.restartMembersResolutionCycle(index)
 	}
 	return t.AsStructuredType()
+}
+
+type membersResolutionEntry struct {
+	t          *Type
+	generation int
+}
+
+type structuredMembersSnapshot struct {
+	resolved   bool
+	members    ast.SymbolTable
+	properties []*ast.Symbol
+	extra      *structuredTypeExtra
+}
+
+func (c *Checker) getMembersResolutionStackIndex(t *Type) int {
+	for i, entry := range c.membersResolutionStack {
+		// A stale entry belongs to a resolution that a restart has already superseded.
+		if entry.t == t && entry.generation == c.membersResolutionGenerations[t] {
+			return i
+		}
+	}
+	return -1
+}
+
+func (c *Checker) popMembersResolution() {
+	entry := c.membersResolutionStack[len(c.membersResolutionStack)-1]
+	c.membersResolutionStack = c.membersResolutionStack[:len(c.membersResolutionStack)-1]
+	if entry.generation != c.membersResolutionGenerations[entry.t] {
+		// A restarted resolution of the circularity this type is part of has already stored its members, so
+		// discard what this stale resolution stored.
+		c.canonicalMembers[entry.t].restore(entry.t)
+	}
+}
+
+// restartMembersResolutionCycle handles a type whose members are read while they are still being resolved. The
+// members seen depend on which type of the circularity started resolving first, so, like variance computation, we
+// find the type with the "smallest" symbol in the circular region of the stack and restart the resolution from
+// there if necessary. This ensures stable results for circular types regardless of where the circularity is entered.
+func (c *Checker) restartMembersResolutionCycle(stackIndex int) {
+	minIndex := stackIndex
+	for i := stackIndex + 1; i < len(c.membersResolutionStack); i++ {
+		if c.compareSymbols(c.membersResolutionStack[i].t.symbol, c.membersResolutionStack[minIndex].t.symbol) < 0 {
+			minIndex = i
+		}
+	}
+	if minIndex == stackIndex {
+		return
+	}
+	cycle := make([]*Type, 0, len(c.membersResolutionStack)-stackIndex)
+	for _, entry := range c.membersResolutionStack[stackIndex:] {
+		cycle = append(cycle, entry.t)
+	}
+	if c.membersResolutionGenerations == nil {
+		c.membersResolutionGenerations = make(map[*Type]int)
+		c.canonicalMembers = make(map[*Type]structuredMembersSnapshot)
+	}
+	for _, t := range cycle {
+		c.membersResolutionGenerations[t]++
+		structuredMembersSnapshot{}.restore(t)
+	}
+	// Like variance computation, hide the type resolutions of the stale resolutions from circularity detection.
+	saveStack := c.membersResolutionStack
+	saveResolutionStart := c.resolutionStart
+	c.membersResolutionStack = nil
+	c.resolutionStart = len(c.typeResolutions)
+	c.resolveStructuredTypeMembers(saveStack[minIndex].t)
+	c.membersResolutionStack = saveStack
+	c.resolutionStart = saveResolutionStart
+	for _, t := range cycle {
+		c.canonicalMembers[t] = takeStructuredMembersSnapshot(t)
+	}
+}
+
+func takeStructuredMembersSnapshot(t *Type) structuredMembersSnapshot {
+	data := t.AsStructuredType()
+	snapshot := structuredMembersSnapshot{resolved: t.objectFlags&ObjectFlagsMembersResolved != 0, members: data.members, properties: data.properties}
+	if data.extra != nil {
+		extra := *data.extra
+		snapshot.extra = &extra
+	}
+	return snapshot
+}
+
+func (s structuredMembersSnapshot) restore(t *Type) {
+	data := t.AsStructuredType()
+	if s.resolved {
+		t.objectFlags |= ObjectFlagsMembersResolved
+	} else {
+		t.objectFlags &^= ObjectFlagsMembersResolved
+	}
+	data.members = s.members
+	data.properties = s.properties
+	if s.extra != nil {
+		extra := *s.extra
+		data.extra = &extra
+	} else {
+		data.extra = nil
+	}
 }
 
 func (c *Checker) resolveClassOrInterfaceMembers(t *Type) {
